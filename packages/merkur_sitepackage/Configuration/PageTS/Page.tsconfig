@@ -1,0 +1,74 @@
+# Merkur Sitepackage – Page TSconfig
+
+# Default backend layout
+mod.web_layout.BackendLayouts {
+    default {
+        title = Standard Seite
+        icon = EXT:merkur_sitepackage/Resources/Public/Icons/BackendLayouts/default.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 1
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Inhalt
+                                colPos = 0
+            }   }   }   }
+        }   }
+    }
+    landingPage {
+        title = Landingpage
+        icon = EXT:merkur_sitepackage/Resources/Public/Icons/BackendLayouts/landingPage.svg
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 5
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = Hero
+                                colPos = 10
+                    }   }   }
+                    2 {
+                        columns {
+                            1 {
+                                name = Über uns
+                                colPos = 20
+                    }   }   }
+                    3 {
+                        columns {
+                            1 {
+                                name = Leistungen
+                                colPos = 30
+                    }   }   }
+                    4 {
+                        columns {
+                            1 {
+                                name = Kontakt
+                                colPos = 40
+                    }   }   }
+                    5 {
+                        columns {
+                            1 {
+                                name = Footer
+                                colPos = 50
+        }   }   }   }   }
+    }
+}
+
+# Remove unused content elements
+TCEFORM.tt_content.CType {
+    removeItems = div, shortcut, list, menu_categorized_content, menu_categorized_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section_pages, menu_sitemap, menu_sitemap_pages, menu_subpages
+}
+
+# Rich text editor configuration
+RTE.default {
+    preset = default
+    proc {
+        allowTagsOutside = address,blockquote,section
+        allowTags := addToList(span)
+    }
+}

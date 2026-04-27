@@ -1,0 +1,100 @@
+// =============================================================================
+// Services Section – Merkur Sitepackage
+// =============================================================================
+
+.section--services {
+    background: $color-light;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $color-border, transparent);
+    }
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+
+    @include respond-to(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// Service card
+.service-card {
+    @include card-base;
+    padding: $spacing-8;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    border: 1px solid $color-border;
+
+    &:hover {
+        .service-card__icon {
+            background: $color-primary;
+            color: $color-white;
+        }
+
+        .service-card__link svg {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.service-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba($color-primary, 0.06);
+    color: $color-primary;
+    border-radius: $radius-lg;
+    flex-shrink: 0;
+    transition: background $transition-base, color $transition-base;
+}
+
+.service-card__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-primary-dark;
+    letter-spacing: -0.01em;
+}
+
+.service-card__description {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+    flex: 1;
+}
+
+.service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+    margin-top: auto;
+    transition: color $transition-fast;
+    @include focus-ring;
+
+    svg {
+        transition: transform $transition-base;
+    }
+
+    &:hover {
+        color: $color-accent-dark;
+    }
+}

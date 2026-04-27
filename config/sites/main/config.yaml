@@ -1,0 +1,37 @@
+base: 'https://mitmerkur.ddev.site'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css
+  - typo3/felogin
+  - typo3/form
+  - typo3/seo-sitemap
+  - merkur/sitepackage
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    direction: ltr
+    flag: de
+  -
+    title: English
+    enabled: true
+    languageId: 1
+    base: /en/
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-US
+    direction: ltr
+    flag: us
+    fallbackType: strict
+    fallbacks: '0'
+rootPageId: 1
+websiteTitle: Merkur
+errorHandling: {}
+routes: {}

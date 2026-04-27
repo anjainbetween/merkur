@@ -1,0 +1,13 @@
+{
+    "name": "merkur-sitepackage",
+    "version": "1.0.0",
+    "description": "Asset build pipeline for merkur_sitepackage",
+    "scripts": {
+        "build": "sass Resources/Private/Scss/main.scss Resources/Public/Css/main.css --style=compressed --load-path=Resources/Private/Scss --silence-deprecation=import",
+        "watch": "sass --watch Resources/Private/Scss/main.scss:Resources/Public/Css/main.css --load-path=Resources/Private/Scss --silence-deprecation=import",
+        "build:dev": "sass Resources/Private/Scss/main.scss Resources/Public/Css/main.css --style=expanded --source-map --load-path=Resources/Private/Scss --silence-deprecation=import"
+    },
+    "devDependencies": {
+        "sass": "^1.70.0"
+    }
+}

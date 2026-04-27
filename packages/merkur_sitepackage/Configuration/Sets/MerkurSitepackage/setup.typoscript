@@ -1,0 +1,95 @@
+# Merkur Sitepackage – TypoScript Setup
+
+config {
+    doctype = html5
+    metaCharset = utf-8
+    htmlTag.attributes {
+        lang = de
+        class = no-js
+    }
+    removeDefaultJS = 0
+    inlineStyle2TempFile = 1
+    compressJs = 1
+    compressCss = 1
+}
+
+page = PAGE
+page {
+    typeNum = 0
+
+    meta {
+        viewport = width=device-width, initial-scale=1.0
+        X-UA-Compatible = IE=edge
+        description.data = field:description // global:TSFE|tmpl|setup|constants|page|siteDescription
+        og:type = website
+        og:title.data = field:title
+        og:description.data = field:description
+        twitter:card = summary_large_image
+    }
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName.stdWrap.cObject = TEXT
+        templateName.stdWrap.cObject {
+            value = Default
+        }
+
+        templateRootPaths {
+            0 = EXT:fluid_styled_content/Resources/Private/Templates/
+            10 = EXT:merkur_sitepackage/Resources/Private/Templates/Pages/
+        }
+        partialRootPaths {
+            0 = EXT:fluid_styled_content/Resources/Private/Partials/
+            10 = EXT:merkur_sitepackage/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:fluid_styled_content/Resources/Private/Layouts/
+            10 = EXT:merkur_sitepackage/Resources/Private/Layouts/
+        }
+
+        variables {
+            siteName = TEXT
+            siteName.value = Merkur
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                as = mainMenu
+                expandAll = 1
+                includeSpacer = 1
+                titleField = nav_title // title
+            }
+        }
+    }
+
+    # Google Fonts
+    includeCSS {
+        googleFontsPreconnect = https://fonts.googleapis.com
+        googleFontsPreconnect.external = 1
+        googleFontsPreconnect.rel = preconnect
+        mainStylesheet = EXT:merkur_sitepackage/Resources/Public/Css/main.css
+        mainStylesheet.media = all
+    }
+
+    # Preconnect for Google Fonts
+    headerData {
+        10 = TEXT
+        10.value = <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        20 = TEXT
+        20.value = <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    }
+
+    includeJSFooter {
+        main = EXT:merkur_sitepackage/Resources/Public/Js/main.js
+        main.defer = 1
+        main.forceOnTop = 0
+    }
+}
+
+# Content rendering via fluid_styled_content
+tt_content {
+    stdWrap.innerWrap = |
+}

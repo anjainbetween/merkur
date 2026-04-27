@@ -1,0 +1,32 @@
+// =============================================================================
+// main.scss – Merkur Sitepackage
+// Entry point – import order matters
+// =============================================================================
+
+// 1. Tokens & utilities (no CSS output by themselves)
+@import 'variables';
+@import 'mixins';
+
+// 2. Base
+@import 'reset';
+@import 'typography';
+@import 'animations';
+
+// 3. Layout & global components
+@import 'layout';
+@import 'navigation';
+@import 'footer';
+
+// 4. Page sections
+@import 'sections/hero';
+@import 'sections/about';
+@import 'sections/services';
+@import 'sections/contact';
+
+// 5. Scroll-offset for sticky nav
+#hero,
+#about,
+#services,
+#contact {
+    scroll-margin-top: 80px;
+}

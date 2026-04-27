@@ -1,0 +1,14 @@
+# Merkur Sitepackage – TypoScript Constants
+
+plugin.tx_merkur_sitepackage {
+    view {
+        templateRootPath = EXT:merkur_sitepackage/Resources/Private/Templates/
+        partialRootPath = EXT:merkur_sitepackage/Resources/Private/Partials/
+        layoutRootPath = EXT:merkur_sitepackage/Resources/Private/Layouts/
+    }
+}
+
+page {
+    siteName = Merkur
+    siteDescription = Professionelle Dienstleistungen für Ihren Erfolg
+}

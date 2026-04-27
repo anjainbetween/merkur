@@ -1,0 +1,145 @@
+// =============================================================================
+// About Section – Merkur Sitepackage
+// =============================================================================
+
+.section--about {
+    background: $color-white;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-12;
+    align-items: center;
+
+    @include respond-to(lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-20;
+    }
+}
+
+// Visual / illustration side
+.about__visual {
+    order: 2;
+
+    @include respond-to(lg) {
+        order: 1;
+    }
+}
+
+.about__image-wrapper {
+    position: relative;
+}
+
+.about__image-placeholder {
+    position: relative;
+    @include aspect-ratio(4, 3);
+    background: $color-light;
+    border-radius: $radius-2xl;
+    overflow: hidden;
+    @include flex-center;
+}
+
+.about__image-shape {
+    position: absolute;
+    border-radius: $radius-full;
+
+    &--1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(135deg, rgba($color-primary, 0.08) 0%, rgba($color-accent, 0.06) 100%);
+        top: -30px;
+        right: -30px;
+    }
+
+    &--2 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, rgba($color-accent, 0.1) 0%, rgba($color-primary, 0.05) 100%);
+        bottom: -20px;
+        left: -20px;
+    }
+}
+
+.about__icon-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-4;
+    padding: $spacing-6;
+}
+
+.about__icon-item {
+    @include flex-center;
+    width: 80px;
+    height: 80px;
+    background: $color-white;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-md;
+    color: $color-primary;
+    margin: auto;
+
+    &:nth-child(2) { color: $color-accent-dark; }
+    &:nth-child(3) { color: $color-cta; margin-top: $spacing-8; }
+    &:nth-child(4) { color: $color-primary-light; margin-top: $spacing-8; }
+}
+
+// Content side
+.about__content {
+    order: 1;
+
+    @include respond-to(lg) {
+        order: 2;
+    }
+}
+
+.about__text {
+    font-size: $font-size-md;
+    color: $color-gray-600;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-5;
+
+    &:last-of-type {
+        margin-bottom: $spacing-8;
+    }
+}
+
+// Stats row
+.about__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-4;
+    margin-bottom: $spacing-10;
+    padding: $spacing-6;
+    background: $color-light;
+    border-radius: $radius-xl;
+}
+
+.about__stat {
+    text-align: center;
+
+    &:not(:last-child) {
+        border-right: 1px solid $color-border;
+    }
+}
+
+.about__stat-value {
+    display: block;
+    font-size: clamp($font-size-2xl, 4vw, $font-size-4xl);
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
+    letter-spacing: -0.04em;
+    @include gradient-text($gradient-primary);
+    line-height: 1.1;
+}
+
+.about__stat-label {
+    display: block;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wider;
+    margin-top: $spacing-1;
+}

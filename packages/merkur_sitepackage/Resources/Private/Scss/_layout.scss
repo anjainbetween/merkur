@@ -1,0 +1,150 @@
+// =============================================================================
+// Layout – Merkur Sitepackage
+// =============================================================================
+
+// Skip link
+.skip-link {
+    @include visually-hidden;
+
+    &:focus {
+        position: fixed;
+        top: $spacing-4;
+        left: $spacing-4;
+        z-index: $z-toast;
+        width: auto;
+        height: auto;
+        padding: $spacing-3 $spacing-6;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background: $color-primary;
+        color: $color-white;
+        border-radius: $radius-md;
+        font-weight: $font-weight-semibold;
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Container
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin-inline: auto;
+    padding-inline: $container-padding-sm;
+
+    @include respond-to(md) {
+        padding-inline: $container-padding;
+    }
+}
+
+// Main content
+.main-content {
+    padding-top: $navbar-height;
+}
+
+// Section base
+.section {
+    padding-block: $section-padding-y-sm;
+
+    @include respond-to(lg) {
+        padding-block: $section-padding-y;
+    }
+}
+
+// Section header (centered intro block)
+.section__header {
+    text-align: center;
+    max-width: 680px;
+    margin-inline: auto;
+    margin-bottom: $spacing-16;
+}
+
+.section__label {
+    @include section-label;
+}
+
+.section__label--light {
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section__headline {
+    margin-bottom: $spacing-5;
+    color: $color-primary-dark;
+}
+
+.section__headline--light {
+    color: $color-white;
+}
+
+.section__subline {
+    font-size: $font-size-md;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+}
+
+// Buttons
+.btn {
+    @include btn-base;
+}
+
+.btn--primary {
+    background: $color-primary;
+    color: $color-white;
+    border-color: $color-primary;
+
+    &:hover {
+        background: $color-primary-light;
+        border-color: $color-primary-light;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($color-primary, 0.35);
+    }
+}
+
+.btn--outline {
+    background: transparent;
+    color: $color-white;
+    border-color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: $color-white;
+        transform: translateY(-2px);
+    }
+}
+
+.btn--accent {
+    background: $gradient-accent;
+    color: $color-white;
+    border-color: transparent;
+
+    &:hover {
+        opacity: 0.92;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($color-accent, 0.4);
+    }
+}
+
+.btn--ghost {
+    background: transparent;
+    color: $color-primary;
+    border-color: $color-border;
+
+    &:hover {
+        background: $color-light;
+        border-color: $color-primary;
+    }
+}
+
+.btn--sm  { padding: $spacing-2 $spacing-4; font-size: $font-size-sm; }
+.btn--lg  { padding: $spacing-4 $spacing-8; font-size: $font-size-md; }
+.btn--full { width: 100%; }
+
+// Section divider
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: $gradient-accent;
+    border-radius: $radius-full;
+    margin: $spacing-6 auto;
+}

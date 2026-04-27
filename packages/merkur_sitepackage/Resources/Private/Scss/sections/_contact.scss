@@ -1,0 +1,250 @@
+// =============================================================================
+// Contact Section – Merkur Sitepackage
+// =============================================================================
+
+.section--contact {
+    background: $color-primary-dark;
+    position: relative;
+    overflow: hidden;
+    color: $color-white;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba($color-accent, 0.06) 0%, transparent 60%);
+        pointer-events: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba($color-primary-light, 0.1) 0%, transparent 60%);
+        pointer-events: none;
+    }
+}
+
+.contact__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-16;
+    align-items: start;
+
+    @include respond-to(lg) {
+        grid-template-columns: 1fr 1.3fr;
+        gap: $spacing-20;
+    }
+}
+
+// Info side
+.contact__subline {
+    font-size: $font-size-md;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-10;
+    margin-top: -$spacing-2;
+}
+
+.contact__details {
+    @include flex-column;
+    gap: $spacing-5;
+}
+
+.contact__detail {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-4;
+
+    div {
+        @include flex-column;
+        gap: $spacing-1;
+    }
+
+    strong {
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
+        color: $color-accent;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-wider;
+    }
+
+    span, a {
+        font-size: $font-size-base;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color $transition-fast;
+    }
+
+    a:hover {
+        color: $color-accent;
+    }
+}
+
+.contact__detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba($color-accent, 0.12);
+    color: $color-accent;
+    border-radius: $radius-lg;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+// Form side
+.contact__form-wrapper {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: $radius-2xl;
+    padding: $spacing-8;
+
+    @include respond-to(md) {
+        padding: $spacing-12;
+    }
+}
+
+// Form elements
+.contact-form {
+    @include flex-column;
+    gap: $spacing-5;
+}
+
+.form-row {
+    display: grid;
+    gap: $spacing-5;
+
+    &--two-cols {
+        @include respond-to(md) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+.form-group {
+    @include flex-column;
+    gap: $spacing-2;
+}
+
+.form-label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+}
+
+.form-required {
+    color: $color-cta;
+    font-size: $font-size-base;
+}
+
+.form-control {
+    width: 100%;
+    padding: $spacing-3 $spacing-4;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: $radius-lg;
+    color: $color-white;
+    font-size: $font-size-base;
+    transition: border-color $transition-fast, background $transition-fast, box-shadow $transition-fast;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $color-accent;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 3px rgba($color-accent, 0.2);
+    }
+
+    &:invalid:not(:placeholder-shown) {
+        border-color: $color-cta;
+    }
+
+    &--textarea {
+        resize: vertical;
+        min-height: 130px;
+    }
+}
+
+// Checkbox
+.form-group--checkbox {
+    gap: 0;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        @include visually-hidden;
+
+        &:checked + .form-checkbox__mark {
+            background: $color-accent;
+            border-color: $color-accent;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &:focus-visible + .form-checkbox__mark {
+            outline: 3px solid $color-accent;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.form-checkbox__mark {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: $radius-sm;
+    margin-top: 2px;
+    position: relative;
+    transition: background $transition-fast, border-color $transition-fast;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 7px;
+        width: 5px;
+        height: 9px;
+        border: 2px solid $color-white;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity $transition-fast;
+    }
+}
+
+.form-checkbox__label {
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: $line-height-relaxed;
+}

@@ -1,0 +1,178 @@
+// =============================================================================
+// Footer – Merkur Sitepackage
+// =============================================================================
+
+.site-footer {
+    background: #07101b; // 4% darker than $color-primary-dark (#0d1b2a)
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer__main {
+    padding-block: $spacing-16 $spacing-12;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-10;
+
+    @include respond-to(sm) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to(lg) {
+        grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+        gap: $spacing-12;
+    }
+}
+
+// Brand column
+.footer__brand {
+    @include flex-column;
+    gap: $spacing-4;
+}
+
+.footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-3;
+    text-decoration: none;
+    @include focus-ring;
+    border-radius: $radius-sm;
+    width: fit-content;
+}
+
+.footer__logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: $color-accent;
+    color: $color-white;
+    border-radius: $radius-md;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-extrabold;
+    letter-spacing: -0.03em;
+}
+
+.footer__logo-text {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    letter-spacing: -0.02em;
+}
+
+.footer__tagline {
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: $line-height-relaxed;
+    max-width: 260px;
+}
+
+.footer__social {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    margin-top: $spacing-2;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: $radius-md;
+    transition: background $transition-fast, color $transition-fast;
+    @include focus-ring;
+
+    &:hover {
+        background: $color-accent;
+        color: $color-white;
+    }
+}
+
+// Link columns
+.footer__col {}
+
+.footer__heading {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-widest;
+    margin-bottom: $spacing-5;
+}
+
+.footer__links {
+    @include flex-column;
+    gap: $spacing-3;
+
+    a {
+        font-size: $font-size-sm;
+        color: rgba(255, 255, 255, 0.5);
+        transition: color $transition-fast;
+        @include focus-ring;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+
+// Address
+.footer__address {
+    @include flex-column;
+    gap: $spacing-3;
+
+    p {
+        font-size: $font-size-sm;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: $line-height-snug;
+    }
+
+    a {
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+}
+
+// Footer bottom bar
+.footer__bottom {
+    padding-block: $spacing-5;
+}
+
+.footer__bottom-inner {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+}
+
+.footer__copyright {
+    font-size: $font-size-sm;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.footer__legal {
+    display: flex;
+    align-items: center;
+    gap: $spacing-6;
+
+    a {
+        font-size: $font-size-sm;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color $transition-fast;
+        @include focus-ring;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}
