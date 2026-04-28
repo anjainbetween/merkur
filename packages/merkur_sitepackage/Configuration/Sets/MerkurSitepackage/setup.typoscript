@@ -20,7 +20,7 @@ page {
     meta {
         viewport = width=device-width, initial-scale=1.0
         X-UA-Compatible = IE=edge
-        description.data = field:description // global:TSFE|tmpl|setup|constants|page|siteDescription
+        description.data = field:description
         og:type = website
         og:title.data = field:title
         og:description.data = field:description
