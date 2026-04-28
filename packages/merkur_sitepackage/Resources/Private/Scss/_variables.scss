@@ -1,77 +1,112 @@
 // =============================================================================
-// Design Tokens – Merkur Sitepackage
+// Design Tokens – extracted 1:1 from Figma (fileKey: 5A2h1NlJDakqykWWQtMdUB)
 // =============================================================================
 
-// Color palette – black & white
-$color-primary:         #111111;
-$color-primary-light:   #2d2d2d;
-$color-primary-dark:    #000000;
-
-$color-accent:          #111111;
-$color-accent-dark:     #000000;
-
-$color-cta:             #111111;
-$color-cta-hover:       #000000;
-
+// ── Colors ────────────────────────────────────────────────────────────────────
+$color-black:           #000000;   // Logo, nav text
+$color-btn:             #040404;   // Button bg, hero circle
+$color-heading:         #211d1d;   // Hero headline
+$color-text-darkest:    #0a0a0a;   // Kontakt headline, footer headings, footer tagline
+$color-text-dark:       #262626;   // Kontakt body text
+$color-text-card:       #171717;   // Card titles, footer Angebot links
+$color-text-muted:      #525252;   // Card descriptions, hero subline
 $color-white:           #ffffff;
+$color-border:          #e5e5e5;   // Section borders, column dividers
+
+// Semantic aliases (used by mixins – must keep these names)
+$color-primary:         $color-black;
+$color-primary-light:   #2d2d2d;
+$color-primary-dark:    $color-black;
+$color-accent:          $color-black;
+$color-accent-dark:     $color-black;
+$color-text:            $color-text-darkest;
 $color-light:           #f9f9f9;
 $color-light-alt:       #f2f2f2;
-$color-border:          #e0e0e0;
-
 $color-gray-100:        #f9f9f9;
-$color-gray-200:        #f0f0f0;
-$color-gray-300:        #e0e0e0;
+$color-gray-200:        #f2f2f2;
+$color-gray-300:        $color-border;
 $color-gray-500:        #999999;
-$color-gray-600:        #666666;
-$color-gray-700:        #444444;
-$color-gray-800:        #222222;
-$color-gray-900:        #111111;
+$color-gray-600:        $color-text-muted;
+$color-gray-700:        $color-text-dark;
+$color-gray-800:        $color-text-card;
+$color-gray-900:        $color-heading;
+$color-text-muted:      #525252;
 
-$color-text:            #111111;
-$color-text-muted:      #666666;
-$color-text-light:      rgba(255, 255, 255, 0.85);
-
-// Gradients
-$gradient-hero:         linear-gradient(135deg, #000000 0%, #111111 100%);
-$gradient-accent:       linear-gradient(135deg, #2d2d2d 0%, #111111 100%);
-$gradient-primary:      linear-gradient(135deg, #111111 0%, #2d2d2d 100%);
-
-// Typography
+// ── Typography ────────────────────────────────────────────────────────────────
 $font-family-base:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-family-heading:   $font-family-base;
 
+// Figma text styles – Big Heading (logo, hero headline)
+$fs-big-heading:        51.343px;
+$fw-big-heading:        700;
+$lh-big-heading:        normal; // 100% = normal
+
+// Figma text styles – Secondary (Kontakt headline)
+$fs-secondary:          40px;
+$fw-secondary:          500;
+$lh-secondary:          48px;
+$ls-secondary:          -0.0289px;
+
+// Figma text styles – Tertiary (card titles, footer Angebot links)
+$fs-tertiary:           24px;
+$fw-tertiary:           500;
+$lh-tertiary:           36px;
+$ls-tertiary:           -0.1697px;
+
+// Figma text styles – Lead (hero subline, Kontakt body, footer tagline)
+$fs-lead:               24px;
+$fw-lead:               400;
+$lh-lead:               38.4px;
+$ls-lead:               0.0703px;
+
+// Figma text styles – Primary (nav links, footer section headings)
+$fs-primary-label:      24px;
+$fw-primary-label:      700;
+$lh-primary-label:      normal;
+$ls-primary-label:      0;
+
+// Figma text styles – Accent (button label)
+$fs-accent-label:       16px;
+$fw-accent-label:       700;
+$lh-accent-label:       24px;
+$ls-accent-label:       -0.3125px;
+
+// Figma text styles – Text (card descriptions, footer legal, email)
+$fs-text:               18px;
+$fw-text:               400;
+$lh-text:               28px;
+$ls-text:               -0.4492px;
+
+// Legacy names required by _mixins.scss
+$font-size-xs:          0.75rem;
+$font-size-sm:          0.875rem;
+$font-size-base:        1rem;
+$font-size-md:          1.125rem;
+$font-size-lg:          $fs-lead;
+$font-size-xl:          $fs-lead;
+$font-size-2xl:         $fs-secondary;
+$font-size-3xl:         2.25rem;
+$font-size-4xl:         3rem;
+$font-size-5xl:         3.75rem;
+$font-size-6xl:         $fs-big-heading;
 $font-weight-light:     300;
 $font-weight-regular:   400;
-$font-weight-medium:    500;
+$font-weight-medium:    $fw-secondary;
 $font-weight-semibold:  600;
-$font-weight-bold:      700;
-$font-weight-extrabold: 800;
-
-$font-size-xs:          0.75rem;    // 12px
-$font-size-sm:          0.875rem;   // 14px
-$font-size-base:        1rem;       // 16px
-$font-size-md:          1.125rem;   // 18px
-$font-size-lg:          1.25rem;    // 20px
-$font-size-xl:          1.5rem;     // 24px
-$font-size-2xl:         1.875rem;   // 30px
-$font-size-3xl:         2.25rem;    // 36px
-$font-size-4xl:         3rem;       // 48px
-$font-size-5xl:         3.75rem;    // 60px
-$font-size-6xl:         4.5rem;     // 72px
-
-$line-height-tight:     1.25;
+$font-weight-bold:      $fw-big-heading;
+$font-weight-extrabold: $fw-big-heading;
+$line-height-tight:     1.2;
 $line-height-snug:      1.375;
 $line-height-base:      1.5;
-$line-height-relaxed:   1.625;
+$line-height-relaxed:   1.6;
 $line-height-loose:     2;
-
 $letter-spacing-tight:  -0.025em;
 $letter-spacing-base:   0;
 $letter-spacing-wide:   0.025em;
 $letter-spacing-wider:  0.05em;
 $letter-spacing-widest: 0.1em;
 
-// Spacing
+// ── Spacing ───────────────────────────────────────────────────────────────────
 $spacing-1:   0.25rem;   //  4px
 $spacing-2:   0.5rem;    //  8px
 $spacing-3:   0.75rem;   // 12px
@@ -86,15 +121,22 @@ $spacing-20:  5rem;      // 80px
 $spacing-24:  6rem;      // 96px
 $spacing-32:  8rem;      // 128px
 
-// Layout
-$container-max-width:   1200px;
-$container-padding:     $spacing-6;
-$container-padding-sm:  $spacing-4;
+// Figma layout values
+$section-py:             120px;  // Vertical padding for all main sections
+$section-py-mobile:       60px;  // Responsive
+$footer-pt:               80px;
+$footer-pb:               40px;
+$nav-top-pad:             40px;  // Space above nav content
+$container-max-width:    1200px;
+$container-inner-p:       20px;  // Inner container padding (Figma var --inner-container-padding)
+$container-padding:       $container-inner-p;
+$container-padding-sm:    $container-inner-p;
+$section-padding-y:       $section-py;
+$section-padding-y-sm:    $section-py-mobile;
+$navbar-height:           142px; // Full nav section height
+$navbar-height-scrolled:  102px;
 
-$section-padding-y:     $spacing-24;
-$section-padding-y-sm:  $spacing-16;
-
-// Breakpoints
+// ── Breakpoints ───────────────────────────────────────────────────────────────
 $bp-xs:   480px;
 $bp-sm:   640px;
 $bp-md:   768px;
@@ -102,7 +144,7 @@ $bp-lg:   1024px;
 $bp-xl:   1280px;
 $bp-2xl:  1536px;
 
-// Border radius
+// ── Border radius ─────────────────────────────────────────────────────────────
 $radius-sm:   0.25rem;
 $radius-md:   0.5rem;
 $radius-lg:   0.75rem;
@@ -110,29 +152,25 @@ $radius-xl:   1rem;
 $radius-2xl:  1.5rem;
 $radius-full: 9999px;
 
-// Shadows
-$shadow-sm:   0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-$shadow-md:   0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-$shadow-lg:   0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-$shadow-xl:   0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-$shadow-2xl:  0 25px 50px -12px rgba(0, 0, 0, 0.15);
-$shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
-$shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+// ── Shadows ───────────────────────────────────────────────────────────────────
+$shadow-sm:         0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-md:         0 4px 6px rgba(0, 0, 0, 0.06);
+$shadow-lg:         0 10px 15px rgba(0, 0, 0, 0.06);
+$shadow-xl:         0 20px 25px rgba(0, 0, 0, 0.06);
+$shadow-2xl:        0 25px 50px rgba(0, 0, 0, 0.12);
+$shadow-card:       0 2px 8px rgba(0, 0, 0, 0.04);
+$shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
 
-// Transitions
+// ── Transitions ───────────────────────────────────────────────────────────────
 $transition-fast:   150ms ease;
 $transition-base:   250ms ease;
 $transition-slow:   400ms ease;
 $transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
-// Z-index scale
+// ── Z-index ───────────────────────────────────────────────────────────────────
 $z-base:       1;
 $z-dropdown:   100;
 $z-sticky:     200;
 $z-overlay:    300;
 $z-modal:      400;
 $z-toast:      500;
-
-// Navigation
-$navbar-height:          72px;
-$navbar-height-scrolled: 60px;

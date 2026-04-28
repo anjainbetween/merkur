@@ -8,32 +8,38 @@
     left: 0;
     right: 0;
     z-index: $z-sticky;
+    height: $navbar-height;
     background: $color-white;
     border-bottom: 1px solid $color-border;
-    transition: box-shadow $transition-base;
+    display: flex;
+    align-items: flex-end;
+    transition: height $transition-base, box-shadow $transition-base;
 
     &.is-scrolled {
+        height: $navbar-height-scrolled;
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
     }
 }
 
 .navbar {
-    padding-block: $spacing-4;
+    width: 100%;
+    padding-bottom: $spacing-6;
 }
 
 .navbar__inner {
-    @include flex-between;
-    gap: $spacing-8;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
 }
 
 // Wordmark
 .navbar__brand {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: flex-end;
     flex-shrink: 0;
     text-decoration: none;
-    @include focus-ring;
-    border-radius: $radius-sm;
+    @include focus-ring($color-black);
 }
 
 .navbar__logo-mark {
@@ -41,18 +47,19 @@
 }
 
 .navbar__logo-text {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-extrabold;
-    color: $color-primary;
-    letter-spacing: -0.02em;
+    font-size: $fs-big-heading;
+    font-weight: $fw-big-heading;
+    line-height: 1;
+    color: $color-black;
     text-transform: uppercase;
+    letter-spacing: 0;
 }
 
-// Menu
+// Nav links
 .navbar__menu {
     display: flex;
-    align-items: center;
-    gap: $spacing-2;
+    align-items: flex-end;
+    gap: 10px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -63,6 +70,7 @@
         top: $navbar-height;
         flex-direction: column;
         align-items: flex-start;
+        gap: 0;
         padding: $spacing-8 $spacing-6;
         background: $color-white;
         border-top: 1px solid $color-border;
@@ -79,42 +87,31 @@
 .navbar__item {
     @include respond-below(lg) {
         width: 100%;
-        border-bottom: 1px solid $color-gray-200;
-    }
-}
-
-.navbar__item--cta {
-    display: none;
-
-    @include respond-below(lg) {
-        display: none;
+        border-bottom: 1px solid $color-border;
     }
 }
 
 .navbar__link {
     display: block;
-    padding: $spacing-2 $spacing-3;
-    color: $color-text;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-wider;
+    padding: 5px;
+    color: $color-black;
+    font-size: $fs-primary-label;
+    font-weight: $fw-primary-label;
+    line-height: $lh-primary-label;
+    letter-spacing: $ls-primary-label;
     text-transform: uppercase;
-    border-radius: $radius-md;
-    transition: color $transition-fast;
-    @include focus-ring;
+    text-decoration: none;
+    transition: opacity $transition-fast;
+    @include focus-ring($color-black);
 
     &:hover {
-        color: $color-primary;
+        opacity: 0.65;
     }
 
     @include respond-below(lg) {
         padding: $spacing-4 $spacing-2;
         font-size: $font-size-md;
     }
-}
-
-.navbar__item.is-active .navbar__link {
-    color: $color-primary;
 }
 
 // Mobile toggle
@@ -126,11 +123,11 @@
     width: 40px;
     height: 40px;
     padding: $spacing-2;
-    border-radius: $radius-md;
     background: transparent;
     border: 1px solid $color-border;
+    border-radius: $radius-sm;
     transition: background $transition-fast;
-    @include focus-ring;
+    @include focus-ring($color-black);
 
     @include respond-below(lg) {
         display: flex;
@@ -141,15 +138,9 @@
     }
 
     &[aria-expanded="true"] {
-        .navbar__toggle-bar:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-        .navbar__toggle-bar:nth-child(2) {
-            opacity: 0;
-        }
-        .navbar__toggle-bar:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
-        }
+        .navbar__toggle-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .navbar__toggle-bar:nth-child(2) { opacity: 0; }
+        .navbar__toggle-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
     }
 }
 
@@ -157,8 +148,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: $color-primary;
-    border-radius: $radius-full;
+    background: $color-black;
     transition: transform $transition-base, opacity $transition-base;
     transform-origin: center;
 }

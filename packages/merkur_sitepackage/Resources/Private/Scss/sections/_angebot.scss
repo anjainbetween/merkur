@@ -4,11 +4,11 @@
 
 .section--angebot {
     background: $color-white;
+    border-top: 1px solid $color-border;
 }
 
 .angebot__header {
     margin-bottom: $spacing-16;
-    max-width: 680px;
 
     @include respond-to(lg) {
         margin-bottom: $spacing-20;
@@ -16,25 +16,30 @@
 }
 
 .angebot__title {
-    font-size: clamp($font-size-3xl, 5vw, $font-size-4xl);
-    font-weight: $font-weight-extrabold;
-    color: $color-primary;
-    letter-spacing: -0.03em;
-    line-height: $line-height-tight;
+    font-size: $fs-secondary;
+    font-weight: $fw-secondary;
+    line-height: $lh-secondary;
+    letter-spacing: $ls-secondary;
+    color: $color-text-darkest;
     margin-bottom: $spacing-5;
+
+    @include respond-below(md) {
+        font-size: clamp(1.75rem, 6vw, $fs-secondary);
+    }
 }
 
 .angebot__description {
-    font-size: $font-size-md;
+    font-size: $fs-lead;
+    font-weight: $fw-lead;
+    line-height: $lh-lead;
+    letter-spacing: $ls-lead;
     color: $color-text-muted;
-    line-height: $line-height-relaxed;
-    max-width: 560px;
+    margin: 0;
 }
 
 .angebot__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
 
     @include respond-to(md) {
         grid-template-columns: repeat(3, 1fr);
@@ -42,17 +47,28 @@
 }
 
 .angebot-card {
-    padding: $spacing-8 0;
-    border-top: 1px solid $color-border;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
+    // Mobile: horizontal dividers between stacked cards
+    @include respond-below(md) {
+        padding: 20px 0;
+        border-top: 1px solid $color-border;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    // Desktop: vertical dividers between columns
     @include respond-to(md) {
-        padding: $spacing-10 $spacing-8;
-        border-top: none;
         border-left: 1px solid $color-border;
 
         &:first-child {
-            padding-left: 0;
             border-left: none;
+            padding-left: 0;
         }
 
         &:last-child {
@@ -62,15 +78,19 @@
 }
 
 .angebot-card__title {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-bold;
-    color: $color-primary;
-    letter-spacing: -0.01em;
-    margin-bottom: $spacing-3;
+    font-size: $fs-tertiary;
+    font-weight: $fw-tertiary;
+    line-height: $lh-tertiary;
+    letter-spacing: $ls-tertiary;
+    color: $color-text-card;
+    margin: 0;
 }
 
 .angebot-card__text {
-    font-size: $font-size-base;
+    font-size: $fs-text;
+    font-weight: $fw-text;
+    line-height: $lh-text;
+    letter-spacing: $ls-text;
     color: $color-text-muted;
-    line-height: $line-height-relaxed;
+    margin: 0;
 }

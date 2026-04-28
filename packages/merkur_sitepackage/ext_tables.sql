@@ -12,5 +12,9 @@ CREATE TABLE pages (
     tx_merkursitepackage_angebot_card2_title  varchar(255)          DEFAULT ''  NOT NULL,
     tx_merkursitepackage_angebot_card2_text   text,
     tx_merkursitepackage_angebot_card3_title  varchar(255)          DEFAULT ''  NOT NULL,
-    tx_merkursitepackage_angebot_card3_text   text
+    tx_merkursitepackage_angebot_card3_text   text,
+
+    tx_merkursitepackage_contact_headline     varchar(255)          DEFAULT ''  NOT NULL,
+    tx_merkursitepackage_contact_subline      text,
+    tx_merkursitepackage_contact_email        varchar(255)          DEFAULT ''  NOT NULL
 );

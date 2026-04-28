@@ -169,6 +169,44 @@ defined('TYPO3') or die();
             ],
         ],
 
+        // ── Contact / Kontakt fields ──────────────────────────────────────────
+
+        'tx_merkursitepackage_contact_headline' => [
+            'label'       => $ll . 'pages.contact_headline',
+            'description' => $ll . 'pages.contact_headline.description',
+            'config'      => [
+                'type'        => 'input',
+                'size'        => 50,
+                'max'         => 255,
+                'eval'        => 'trim',
+                'placeholder' => $ll . 'pages.contact_headline.placeholder',
+            ],
+        ],
+
+        'tx_merkursitepackage_contact_subline' => [
+            'label'       => $ll . 'pages.contact_subline',
+            'description' => $ll . 'pages.contact_subline.description',
+            'config'      => [
+                'type'        => 'text',
+                'cols'        => 50,
+                'rows'        => 3,
+                'eval'        => 'trim',
+                'placeholder' => $ll . 'pages.contact_subline.placeholder',
+            ],
+        ],
+
+        'tx_merkursitepackage_contact_email' => [
+            'label'       => $ll . 'pages.contact_email',
+            'description' => $ll . 'pages.contact_email.description',
+            'config'      => [
+                'type'        => 'input',
+                'size'        => 50,
+                'max'         => 255,
+                'eval'        => 'trim,email',
+                'placeholder' => $ll . 'pages.contact_email.placeholder',
+            ],
+        ],
+
     ]);
 
     // Palette: CTA button text + link rendered side by side in the form
@@ -207,6 +245,17 @@ defined('TYPO3') or die();
         . ',tx_merkursitepackage_hero_subheadline'
         . ',--palette--;;merkur_hero_cta'
         . ',tx_merkursitepackage_hero_bg_image',
+        '1',
+        'after:--palette--;;title'
+    );
+
+    // Add Kontakt tab to page properties (doktype = 1)
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'pages',
+        '--div--;' . $ll . 'pages.tab.contact'
+        . ',tx_merkursitepackage_contact_headline'
+        . ',tx_merkursitepackage_contact_subline'
+        . ',tx_merkursitepackage_contact_email',
         '1',
         'after:--palette--;;title'
     );

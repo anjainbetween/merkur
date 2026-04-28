@@ -122,6 +122,38 @@
             <trans-unit id="pages.angebot_card3_text">
                 <source>Card 3 – Description</source>
             </trans-unit>
+
+            <!-- Contact / Kontakt -->
+            <trans-unit id="pages.tab.contact">
+                <source>Kontakt Section</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline">
+                <source>Headline</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline.description">
+                <source>Main headline for the Kontakt section. Overrides the default text from the template.</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline.placeholder">
+                <source>e.g. Mehr Zeit fürs Wesentliche beginnt hier.</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline">
+                <source>Subline</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline.description">
+                <source>Supporting text below the headline. Keep it to 1–3 sentences.</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline.placeholder">
+                <source>e.g. Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe.</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_email">
+                <source>Contact Email</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_email.description">
+                <source>Email address used for the mailto button. Overrides the default address from the template.</source>
+            </trans-unit>
+            <trans-unit id="pages.contact_email.placeholder">
+                <source>e.g. hallo@mitmerkur.ch</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

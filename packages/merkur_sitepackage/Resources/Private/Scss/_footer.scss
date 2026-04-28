@@ -9,7 +9,8 @@
 }
 
 .footer__main {
-    padding-block: $spacing-16 $spacing-12;
+    padding-top: $footer-pt;
+    padding-bottom: $footer-pb;
 }
 
 .footer__grid {
@@ -19,23 +20,24 @@
 
     @include respond-to(sm) {
         grid-template-columns: 1fr 1fr;
-        gap: $spacing-12;
+        align-items: flex-end;
     }
 }
 
 // Brand column
 .footer__brand {
-    @include flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $spacing-4;
+    justify-content: flex-end;
 }
 
 .footer__logo {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    @include focus-ring;
-    border-radius: $radius-sm;
     width: fit-content;
+    @include focus-ring($color-black);
 }
 
 .footer__logo-mark {
@@ -43,94 +45,114 @@
 }
 
 .footer__logo-text {
-    font-size: $font-size-lg;
-    font-weight: $font-weight-extrabold;
-    color: $color-primary;
-    letter-spacing: -0.02em;
+    font-size: $fs-big-heading;
+    font-weight: $fw-big-heading;
+    line-height: 1;
+    color: $color-black;
     text-transform: uppercase;
+    letter-spacing: 0;
 }
 
 .footer__tagline {
-    font-size: $font-size-sm;
+    font-size: $fs-lead;
+    font-weight: $fw-lead;
+    line-height: $lh-lead;
+    letter-spacing: $ls-lead;
     color: $color-text-muted;
-    line-height: $line-height-relaxed;
-    max-width: 260px;
 }
 
 .footer__social {
     display: none;
 }
 
-// Link columns
-.footer__col {}
+// Link/contact column
+.footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    justify-content: flex-end;
+}
 
 .footer__heading {
-    font-size: $font-size-xs;
-    font-weight: $font-weight-bold;
-    color: $color-primary;
+    font-size: $fs-primary-label;
+    font-weight: $fw-primary-label;
+    line-height: $lh-primary-label;
+    letter-spacing: $ls-primary-label;
+    color: $color-text-darkest;
     text-transform: uppercase;
-    letter-spacing: $letter-spacing-widest;
-    margin-bottom: $spacing-4;
-    margin-top: $spacing-5;
 }
 
 .footer__contact-email {
-    font-size: $font-size-sm;
-    color: $color-text-muted;
-    transition: color $transition-fast;
-    @include focus-ring;
+    font-size: $fs-text;
+    font-weight: $fw-text;
+    line-height: $lh-text;
+    letter-spacing: $ls-text;
+    color: $color-black;
+    text-decoration: none;
+    transition: opacity $transition-fast;
+    @include focus-ring($color-black);
 
     &:hover {
-        color: $color-primary;
+        opacity: 0.65;
     }
 }
 
 .footer__links {
-    @include flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $spacing-3;
 
     a {
-        font-size: $font-size-sm;
-        color: $color-text-muted;
-        transition: color $transition-fast;
-        @include focus-ring;
+        font-size: $fs-tertiary;
+        font-weight: $fw-tertiary;
+        line-height: $lh-tertiary;
+        letter-spacing: $ls-tertiary;
+        color: $color-text-card;
+        text-decoration: none;
+        transition: opacity $transition-fast;
+        @include focus-ring($color-black);
 
         &:hover {
-            color: $color-primary;
+            opacity: 0.65;
         }
     }
 }
 
-// Address
 .footer__address {
-    @include flex-column;
+    display: flex;
+    flex-direction: column;
     gap: $spacing-3;
 
-    p {
-        font-size: $font-size-sm;
+    p, a {
+        font-size: $fs-text;
+        font-weight: $fw-text;
+        line-height: $lh-text;
+        letter-spacing: $ls-text;
         color: $color-text-muted;
-        line-height: $line-height-snug;
     }
 
     a {
-        transition: color $transition-fast;
+        text-decoration: none;
+        transition: opacity $transition-fast;
 
         &:hover {
-            color: $color-primary;
+            opacity: 0.65;
         }
     }
 }
 
-// Footer bottom bar
+// Footer legal bar
 .footer__bottom {
-    padding-block: $spacing-5;
-    border-top: 1px solid $color-border;
+    padding-top: 80px;
+    padding-bottom: $footer-pb;
 }
 
 .footer__bottom-inner {
-    @include flex-between;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: $spacing-4;
+    gap: $spacing-6;
 }
 
 .footer__copyright {
@@ -143,13 +165,17 @@
     gap: $spacing-6;
 
     a {
-        font-size: $font-size-sm;
+        font-size: $fs-text;
+        font-weight: $fw-text;
+        line-height: $lh-text;
+        letter-spacing: $ls-text;
         color: $color-text-muted;
-        transition: color $transition-fast;
-        @include focus-ring;
+        text-decoration: none;
+        transition: opacity $transition-fast;
+        @include focus-ring($color-black);
 
         &:hover {
-            color: $color-primary;
+            opacity: 0.65;
         }
     }
 }

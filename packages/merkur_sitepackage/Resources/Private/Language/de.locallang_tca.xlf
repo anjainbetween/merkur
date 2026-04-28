@@ -154,6 +154,48 @@
                 <source>Card 3 – Description</source>
                 <target>Karte 3 – Beschreibung</target>
             </trans-unit>
+
+            <!-- Contact / Kontakt -->
+            <trans-unit id="pages.tab.contact">
+                <source>Kontakt Section</source>
+                <target>Kontakt-Bereich</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline">
+                <source>Headline</source>
+                <target>Überschrift</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline.description">
+                <source>Main headline for the Kontakt section. Overrides the default text from the template.</source>
+                <target>Hauptüberschrift im Kontakt-Bereich. Überschreibt den Standardtext aus dem Template.</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_headline.placeholder">
+                <source>e.g. Mehr Zeit fürs Wesentliche beginnt hier.</source>
+                <target>z. B. Mehr Zeit fürs Wesentliche beginnt hier.</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline">
+                <source>Subline</source>
+                <target>Unterzeile</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline.description">
+                <source>Supporting text below the headline. Keep it to 1–3 sentences.</source>
+                <target>Ergänzender Text unter der Überschrift. 1–3 Sätze empfohlen.</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_subline.placeholder">
+                <source>e.g. Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe.</source>
+                <target>z. B. Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe.</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_email">
+                <source>Contact Email</source>
+                <target>Kontakt-E-Mail</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_email.description">
+                <source>Email address used for the mailto button. Overrides the default address from the template.</source>
+                <target>E-Mail-Adresse für den Mailto-Button. Überschreibt die Standardadresse aus dem Template.</target>
+            </trans-unit>
+            <trans-unit id="pages.contact_email.placeholder">
+                <source>e.g. hallo@mitmerkur.ch</source>
+                <target>z. B. hallo@mitmerkur.ch</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p /Users/anja/typo3-merkur/packages/merkur_sitepackage/Resources/Public/Css)",
-      "Bash(touch /Users/anja/typo3-merkur/packages/merkur_sitepackage/Resources/Public/Css/.gitkeep)"
+      "Bash(touch /Users/anja/typo3-merkur/packages/merkur_sitepackage/Resources/Public/Css/.gitkeep)",
+      "mcp__figma__get_design_context"
     ]
   }
 }

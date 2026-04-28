@@ -4,38 +4,38 @@
 
 .section--hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 800px;
     display: flex;
     align-items: flex-end;
     padding-block: 0;
     overflow: hidden;
     background: $color-white;
-    color: $color-text;
 
-    // Decorative dark circle – top right
+    // Decorative dark circle – Figma exact proportions
     &::before {
         content: '';
         position: absolute;
-        top: -15%;
-        right: -22%;
-        width: min(70vw, 680px);
-        height: min(70vw, 680px);
-        background: $color-primary-dark;
-        border-radius: $radius-full;
+        width: 74.47%;
+        aspect-ratio: 1 / 1;
+        left: 53.18%;
+        top: -57.1%;
+        background: $color-btn;
+        border-radius: 50%;
         pointer-events: none;
         z-index: 0;
     }
 }
 
-// Optional background image (overrides white bg + circle)
+// Hide circle when a background image is set
+.section--hero.has-bg-image::before {
+    display: none;
+}
+
+// Optional background image
 .hero__background {
     position: absolute;
     inset: 0;
     z-index: 0;
-}
-
-.hero__gradient {
-    display: none;
 }
 
 .hero__bg-image {
@@ -45,99 +45,51 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-    }
 }
 
-.hero__particles {
-    display: none;
-}
-
-// Show the white/circle design only when no bg image is set
-.section--hero:not(.has-bg-image) .hero__content {
-    color: $color-text;
-
-    .hero__headline {
-        color: $color-primary;
-    }
-
-    .hero__subline {
-        color: $color-text-muted;
-    }
-
-    .btn--primary {
-        background: $color-primary;
-        color: $color-white;
-        border-color: $color-primary;
-
-        &:hover {
-            background: $color-primary-light;
-            border-color: $color-primary-light;
-        }
-    }
-}
-
-// When bg image is present, restore white text
-.section--hero.has-bg-image .hero__content {
-    color: $color-white;
-
-    .hero__headline {
-        color: $color-white;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero__subline {
-        color: rgba(255, 255, 255, 0.8);
-    }
-}
-
+// Hero content – pinned to bottom with section padding
 .hero__content {
     position: relative;
     z-index: 1;
-    max-width: 680px;
-    padding-block: $spacing-32 $spacing-20;
+    max-width: 644px;
+    padding-bottom: $section-py;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-    @include respond-to(md) {
-        padding-block: $spacing-32 $spacing-24;
+    @include respond-below(md) {
+        padding-bottom: $section-py-mobile;
+        max-width: 100%;
     }
 }
 
-.hero__tagline {
-    display: none;
-}
-
 .hero__headline {
-    color: $color-primary;
-    font-size: clamp($font-size-4xl, 8vw, $font-size-6xl);
-    font-weight: $font-weight-extrabold;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    margin-bottom: $spacing-5;
+    font-size: $fs-big-heading;
+    font-weight: $fw-big-heading;
+    line-height: $lh-big-heading;
+    color: $color-heading;
+    margin: 0;
+
+    @include respond-below(md) {
+        font-size: clamp(2rem, 8vw, $fs-big-heading);
+    }
 }
 
 .hero__subline {
-    font-size: clamp($font-size-base, 2.5vw, $font-size-md);
+    font-size: $fs-lead;
+    font-weight: $fw-lead;
+    line-height: $lh-lead;
+    letter-spacing: $ls-lead;
     color: $color-text-muted;
-    line-height: $line-height-relaxed;
-    max-width: 520px;
-    margin-bottom: $spacing-8;
+    margin: 0;
+
+    @include respond-below(md) {
+        font-size: $font-size-base;
+    }
 }
 
 .hero__actions {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: $spacing-4;
-}
-
-.hero__scroll-indicator {
-    display: none;
-}
-
-.hero__scroll-dot {
-    display: none;
 }

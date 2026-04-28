@@ -1,166 +1,43 @@
-<f:comment><!-- Contact Section --></f:comment>
+<f:comment><!-- Kontakt Section – TCA fields: contact_headline, contact_subline, contact_email, hero_button_text --></f:comment>
 
 <section class="section section--contact" id="contact" aria-labelledby="contact-headline">
     <div class="container">
-        <div class="contact__grid">
-            <div class="contact__info" data-animate="fade-right">
-                <h2 class="section__headline" id="contact-headline">
-                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.headline" />
-                </h2>
+        <div class="contact__cta" data-animate="fade-up">
 
-                <p class="contact__subline">
-                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.subline" />
-                </p>
+            <h2 class="contact__headline" id="contact-headline">
+                <f:if condition="{data.tx_merkursitepackage_contact_headline}">
+                    <f:then>{data.tx_merkursitepackage_contact_headline}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.headline" />
+                    </f:else>
+                </f:if>
+            </h2>
 
-                <ul class="contact__details">
-                    <li class="contact__detail">
-                        <span class="contact__detail-icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.label" />
-                            </strong>
-                            <a href="mailto:info@merkur.de">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.value" />
-                            </a>
-                        </div>
-                    </li>
-                    <li class="contact__detail">
-                        <span class="contact__detail-icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.phone.label" />
-                            </strong>
-                            <a href="tel:+493012345678">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.phone.value" />
-                            </a>
-                        </div>
-                    </li>
-                    <li class="contact__detail">
-                        <span class="contact__detail-icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.hours.label" />
-                            </strong>
-                            <span>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.hours.value" />
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <p class="contact__subline">
+                <f:if condition="{data.tx_merkursitepackage_contact_subline}">
+                    <f:then>{data.tx_merkursitepackage_contact_subline}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.subline" />
+                    </f:else>
+                </f:if>
+            </p>
 
-            <div class="contact__form-wrapper" data-animate="fade-left">
-                <form
-                    class="contact-form"
-                    id="contact-form"
-                    method="post"
-                    action="#contact"
-                    novalidate
-                    aria-label="Kontaktformular"
-                >
-                    <div class="form-row form-row--two-cols">
-                        <div class="form-group">
-                            <label class="form-label" for="contact-name">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.name" />
-                                <span class="form-required" aria-hidden="true">*</span>
-                            </label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                id="contact-name"
-                                name="name"
-                                placeholder="{f:translate(key: 'LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.name.placeholder')}"
-                                required
-                                autocomplete="name"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-email">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.email" />
-                                <span class="form-required" aria-hidden="true">*</span>
-                            </label>
-                            <input
-                                class="form-control"
-                                type="email"
-                                id="contact-email"
-                                name="email"
-                                placeholder="{f:translate(key: 'LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.email.placeholder')}"
-                                required
-                                autocomplete="email"
-                            />
-                        </div>
-                    </div>
+            <f:variable name="contactEmail">
+                <f:if condition="{data.tx_merkursitepackage_contact_email}">
+                    <f:then>{data.tx_merkursitepackage_contact_email}</f:then>
+                    <f:else>hallo@mitmerkur.ch</f:else>
+                </f:if>
+            </f:variable>
 
-                    <div class="form-row form-row--two-cols">
-                        <div class="form-group">
-                            <label class="form-label" for="contact-phone">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.phone" />
-                            </label>
-                            <input
-                                class="form-control"
-                                type="tel"
-                                id="contact-phone"
-                                name="phone"
-                                placeholder="{f:translate(key: 'LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.phone.placeholder')}"
-                                autocomplete="tel"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-subject">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.subject" />
-                            </label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                id="contact-subject"
-                                name="subject"
-                                placeholder="{f:translate(key: 'LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.subject.placeholder')}"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="contact-message">
-                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.message" />
-                            <span class="form-required" aria-hidden="true">*</span>
-                        </label>
-                        <textarea
-                            class="form-control form-control--textarea"
-                            id="contact-message"
-                            name="message"
-                            rows="5"
-                            placeholder="{f:translate(key: 'LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.message.placeholder')}"
-                            required
-                        ></textarea>
-                    </div>
-
-                    <div class="form-group form-group--checkbox">
-                        <label class="form-checkbox">
-                            <input type="checkbox" name="privacy" required />
-                            <span class="form-checkbox__mark"></span>
-                            <span class="form-checkbox__label">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.privacy" />
-                            </span>
-                        </label>
-                    </div>
-
-                    <button class="btn btn--primary btn--lg btn--full" type="submit">
+            <a class="btn btn--primary" href="mailto:{contactEmail}">
+                <f:if condition="{data.tx_merkursitepackage_hero_button_text}">
+                    <f:then>{data.tx_merkursitepackage_hero_button_text}</f:then>
+                    <f:else>
                         <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.primary" />
-                    </button>
-                </form>
-            </div>
+                    </f:else>
+                </f:if>
+            </a>
+
         </div>
     </div>
 </section>
