@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:merkur_sitepackage/Resources/Private/Language/locallang_tca.xlf">
+        <header/>
+        <body>
+            <!-- Tab & palette labels -->
+            <trans-unit id="pages.tab.hero">
+                <source>Hero Section</source>
+            </trans-unit>
+            <trans-unit id="pages.palette.hero_cta">
+                <source>Call to Action</source>
+            </trans-unit>
+            <trans-unit id="pages.tab.angebot">
+                <source>Angebot Section</source>
+            </trans-unit>
+
+            <!-- Hero: Headline -->
+            <trans-unit id="pages.hero_headline">
+                <source>Headline</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_headline.description">
+                <source>Main headline displayed in the hero section. Overrides the default text from the template.</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_headline.placeholder">
+                <source>e.g. Mehr Zeit fürs Wichtige</source>
+            </trans-unit>
+
+            <!-- Hero: Subheadline -->
+            <trans-unit id="pages.hero_subheadline">
+                <source>Subheadline</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_subheadline.description">
+                <source>Supporting text beneath the headline. Keep it concise – 1 to 2 sentences.</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_subheadline.placeholder">
+                <source>e.g. Wir automatisieren Prozesse, verbinden Systeme und schaffen Klarheit.</source>
+            </trans-unit>
+
+            <!-- Hero: Button text -->
+            <trans-unit id="pages.hero_button_text">
+                <source>Button Label</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_button_text.description">
+                <source>Label for the primary call-to-action button.</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_button_text.placeholder">
+                <source>e.g. Gespräch vereinbaren</source>
+            </trans-unit>
+
+            <!-- Hero: Button link -->
+            <trans-unit id="pages.hero_button_link">
+                <source>Button Link</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_button_link.description">
+                <source>Target URL or page for the primary call-to-action button. Leave empty to use the default anchor link.</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_button_link.browserTitle">
+                <source>Select Link Target</source>
+            </trans-unit>
+
+            <!-- Hero: Background image -->
+            <trans-unit id="pages.hero_bg_image">
+                <source>Background Image</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_bg_image.description">
+                <source>Optional background image for the hero section. When set, replaces the default white design. Recommended minimum size: 1920 × 1080 px.</source>
+            </trans-unit>
+            <trans-unit id="pages.hero_bg_image.addImage">
+                <source>Add background image</source>
+            </trans-unit>
+
+            <!-- Angebot: Section title & description -->
+            <trans-unit id="pages.angebot_title">
+                <source>Section Title</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_title.description">
+                <source>Heading displayed above the service cards.</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_title.placeholder">
+                <source>e.g. Unser Angebot</source>
+            </trans-unit>
+
+            <trans-unit id="pages.angebot_description">
+                <source>Section Description</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_description.description">
+                <source>Optional introductory text below the section title.</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_description.placeholder">
+                <source>e.g. Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe.</source>
+            </trans-unit>
+
+            <!-- Angebot: Card 1 -->
+            <trans-unit id="pages.angebot_card1_title">
+                <source>Card 1 – Title</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card1_title.placeholder">
+                <source>e.g. KI &amp; Automatisierung</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card1_text">
+                <source>Card 1 – Description</source>
+            </trans-unit>
+
+            <!-- Angebot: Card 2 -->
+            <trans-unit id="pages.angebot_card2_title">
+                <source>Card 2 – Title</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card2_title.placeholder">
+                <source>e.g. Prozessoptimierung</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card2_text">
+                <source>Card 2 – Description</source>
+            </trans-unit>
+
+            <!-- Angebot: Card 3 -->
+            <trans-unit id="pages.angebot_card3_title">
+                <source>Card 3 – Title</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card3_title.placeholder">
+                <source>e.g. Strategieberatung</source>
+            </trans-unit>
+            <trans-unit id="pages.angebot_card3_text">
+                <source>Card 3 – Description</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

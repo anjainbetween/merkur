@@ -1,0 +1,86 @@
+<f:comment><!-- Angebot Section – TCA fields: angebot_title, angebot_description, card1–3 title & text --></f:comment>
+
+<section class="section section--angebot" id="angebot" aria-labelledby="angebot-headline">
+    <div class="container">
+
+        <div class="angebot__header" data-animate="fade-up">
+            <h2 class="angebot__title" id="angebot-headline">
+                <f:if condition="{data.tx_merkursitepackage_angebot_title}">
+                    <f:then>{data.tx_merkursitepackage_angebot_title}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.title" />
+                    </f:else>
+                </f:if>
+            </h2>
+            <p class="angebot__description">
+                <f:if condition="{data.tx_merkursitepackage_angebot_description}">
+                    <f:then>{data.tx_merkursitepackage_angebot_description}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.description" />
+                    </f:else>
+                </f:if>
+            </p>
+        </div>
+
+        <div class="angebot__grid" role="list">
+
+            <article class="angebot-card" role="listitem" data-animate="fade-up">
+                <h3 class="angebot-card__title">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card1_title}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card1_title}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card1.title" />
+                        </f:else>
+                    </f:if>
+                </h3>
+                <p class="angebot-card__text">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card1_text}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card1_text}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card1.text" />
+                        </f:else>
+                    </f:if>
+                </p>
+            </article>
+
+            <article class="angebot-card" role="listitem" data-animate="fade-up" style="animation-delay: 0.05s">
+                <h3 class="angebot-card__title">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card2_title}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card2_title}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card2.title" />
+                        </f:else>
+                    </f:if>
+                </h3>
+                <p class="angebot-card__text">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card2_text}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card2_text}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card2.text" />
+                        </f:else>
+                    </f:if>
+                </p>
+            </article>
+
+            <article class="angebot-card" role="listitem" data-animate="fade-up" style="animation-delay: 0.1s">
+                <h3 class="angebot-card__title">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card3_title}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card3_title}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card3.title" />
+                        </f:else>
+                    </f:if>
+                </h3>
+                <p class="angebot-card__text">
+                    <f:if condition="{data.tx_merkursitepackage_angebot_card3_text}">
+                        <f:then>{data.tx_merkursitepackage_angebot_card3_text}</f:then>
+                        <f:else>
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:angebot.card3.text" />
+                        </f:else>
+                    </f:if>
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>

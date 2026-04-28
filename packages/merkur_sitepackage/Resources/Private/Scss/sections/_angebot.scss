@@ -1,0 +1,76 @@
+// =============================================================================
+// Angebot Section – Merkur Sitepackage
+// =============================================================================
+
+.section--angebot {
+    background: $color-white;
+}
+
+.angebot__header {
+    margin-bottom: $spacing-16;
+    max-width: 680px;
+
+    @include respond-to(lg) {
+        margin-bottom: $spacing-20;
+    }
+}
+
+.angebot__title {
+    font-size: clamp($font-size-3xl, 5vw, $font-size-4xl);
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
+    letter-spacing: -0.03em;
+    line-height: $line-height-tight;
+    margin-bottom: $spacing-5;
+}
+
+.angebot__description {
+    font-size: $font-size-md;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+    max-width: 560px;
+}
+
+.angebot__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    @include respond-to(md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.angebot-card {
+    padding: $spacing-8 0;
+    border-top: 1px solid $color-border;
+
+    @include respond-to(md) {
+        padding: $spacing-10 $spacing-8;
+        border-top: none;
+        border-left: 1px solid $color-border;
+
+        &:first-child {
+            padding-left: 0;
+            border-left: none;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.angebot-card__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    letter-spacing: -0.01em;
+    margin-bottom: $spacing-3;
+}
+
+.angebot-card__text {
+    font-size: $font-size-base;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+}
