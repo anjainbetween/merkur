@@ -10,213 +10,130 @@
             <trans-unit id="nav.home">
                 <source>Home</source>
             </trans-unit>
-            <trans-unit id="nav.about">
-                <source>About</source>
-            </trans-unit>
-            <trans-unit id="nav.services">
-                <source>Services</source>
+            <trans-unit id="nav.angebot">
+                <source>Angebot</source>
             </trans-unit>
             <trans-unit id="nav.contact">
-                <source>Contact</source>
+                <source>Kontakt</source>
             </trans-unit>
             <trans-unit id="nav.toggleMenu">
                 <source>Toggle navigation menu</source>
             </trans-unit>
 
             <!-- Hero Section -->
-            <trans-unit id="hero.tagline">
-                <source>Your success is our mission</source>
-            </trans-unit>
             <trans-unit id="hero.headline">
-                <source>Professional Solutions for Your Business</source>
+                <source>Mehr Zeit fürs Wichtige</source>
+            </trans-unit>
+            <trans-unit id="hero.headline.default">
+                <source>Mehr Zeit fürs Wichtige</source>
             </trans-unit>
             <trans-unit id="hero.subline">
-                <source>We deliver innovative strategies and tailor-made solutions that drive your company forward. Reliable, experienced, results-oriented.</source>
+                <source>Wir automatisieren Prozesse, verbinden Systeme und schaffen Klarheit.</source>
             </trans-unit>
             <trans-unit id="hero.cta.primary">
-                <source>Discover Our Services</source>
-            </trans-unit>
-            <trans-unit id="hero.cta.secondary">
-                <source>Contact Us</source>
+                <source>Gespräch vereinbaren</source>
             </trans-unit>
 
-            <!-- About Section -->
-            <trans-unit id="about.label">
-                <source>About Us</source>
+            <!-- Angebot Section -->
+            <trans-unit id="angebot.title">
+                <source>Unser Angebot</source>
             </trans-unit>
-            <trans-unit id="about.headline">
-                <source>Expertise You Can Count On</source>
+            <trans-unit id="angebot.description">
+                <source>Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe.</source>
             </trans-unit>
-            <trans-unit id="about.text1">
-                <source>With over 15 years of experience, Merkur has established itself as a trusted partner for businesses seeking sustainable growth and innovative solutions. Our interdisciplinary team combines deep industry knowledge with fresh perspectives.</source>
+            <trans-unit id="angebot.card1.title">
+                <source>KI &amp; Automatisierung</source>
             </trans-unit>
-            <trans-unit id="about.text2">
-                <source>We believe in building long-term partnerships based on trust, transparency, and measurable results. Your goals become our goals – and we work tirelessly to achieve them.</source>
+            <trans-unit id="angebot.card1.text">
+                <source>Wir automatisieren wiederkehrende Abläufe und verbinden Ihre Systeme so, dass Arbeit von selbst läuft.</source>
             </trans-unit>
-            <trans-unit id="about.stat1.value">
-                <source>15+</source>
+            <trans-unit id="angebot.card2.title">
+                <source>Prozessoptimierung</source>
             </trans-unit>
-            <trans-unit id="about.stat1.label">
-                <source>Years Experience</source>
+            <trans-unit id="angebot.card2.text">
+                <source>Wir bringen Struktur in Ihre Abläufe und machen sichtbar, wo Zeit verloren geht.</source>
             </trans-unit>
-            <trans-unit id="about.stat2.value">
-                <source>300+</source>
+            <trans-unit id="angebot.card3.title">
+                <source>Strategieberatung</source>
             </trans-unit>
-            <trans-unit id="about.stat2.label">
-                <source>Happy Clients</source>
-            </trans-unit>
-            <trans-unit id="about.stat3.value">
-                <source>98%</source>
-            </trans-unit>
-            <trans-unit id="about.stat3.label">
-                <source>Satisfaction Rate</source>
-            </trans-unit>
-            <trans-unit id="about.cta">
-                <source>Learn More About Us</source>
-            </trans-unit>
-
-            <!-- Services Section -->
-            <trans-unit id="services.label">
-                <source>Our Services</source>
-            </trans-unit>
-            <trans-unit id="services.headline">
-                <source>What We Offer</source>
-            </trans-unit>
-            <trans-unit id="services.subline">
-                <source>Comprehensive solutions tailored to your unique business needs</source>
-            </trans-unit>
-            <trans-unit id="services.1.title">
-                <source>Strategy &amp; Consulting</source>
-            </trans-unit>
-            <trans-unit id="services.1.description">
-                <source>Data-driven strategies and expert consulting to help you navigate complex business challenges and seize new opportunities.</source>
-            </trans-unit>
-            <trans-unit id="services.2.title">
-                <source>Digital Transformation</source>
-            </trans-unit>
-            <trans-unit id="services.2.description">
-                <source>Modernize your business processes with cutting-edge digital solutions, from workflow automation to cloud integration.</source>
-            </trans-unit>
-            <trans-unit id="services.3.title">
-                <source>Brand &amp; Marketing</source>
-            </trans-unit>
-            <trans-unit id="services.3.description">
-                <source>Build a compelling brand identity and effective marketing campaigns that resonate with your target audience.</source>
-            </trans-unit>
-            <trans-unit id="services.4.title">
-                <source>Technology Solutions</source>
-            </trans-unit>
-            <trans-unit id="services.4.description">
-                <source>Custom software development, system integration and IT infrastructure to power your business growth.</source>
-            </trans-unit>
-            <trans-unit id="services.5.title">
-                <source>Project Management</source>
-            </trans-unit>
-            <trans-unit id="services.5.description">
-                <source>End-to-end project delivery with agile methodologies, ensuring on-time, on-budget results every time.</source>
-            </trans-unit>
-            <trans-unit id="services.6.title">
-                <source>Training &amp; Development</source>
-            </trans-unit>
-            <trans-unit id="services.6.description">
-                <source>Empower your team with customized training programs and workshops that build lasting skills and capabilities.</source>
-            </trans-unit>
-            <trans-unit id="services.cta">
-                <source>Learn More</source>
+            <trans-unit id="angebot.card3.text">
+                <source>Wir schaffen Klarheit darüber, was Sie wirklich voranbringt.</source>
             </trans-unit>
 
             <!-- Contact Section -->
-            <trans-unit id="contact.label">
-                <source>Get In Touch</source>
-            </trans-unit>
             <trans-unit id="contact.headline">
-                <source>Let's Work Together</source>
+                <source>Mehr Zeit fürs Wesentliche beginnt hier.</source>
             </trans-unit>
             <trans-unit id="contact.subline">
-                <source>Ready to take the next step? We'd love to hear from you. Send us a message and we'll get back to you as soon as possible.</source>
+                <source>Gute Systeme sparen Zeit. Klare Prozesse schaffen Ruhe. Technik sollte entlasten, nicht komplizierter machen.</source>
             </trans-unit>
             <trans-unit id="contact.form.name">
-                <source>Your Name</source>
+                <source>Ihr Name</source>
             </trans-unit>
             <trans-unit id="contact.form.name.placeholder">
-                <source>John Doe</source>
+                <source>Max Mustermann</source>
             </trans-unit>
             <trans-unit id="contact.form.email">
-                <source>Email Address</source>
+                <source>E-Mail-Adresse</source>
             </trans-unit>
             <trans-unit id="contact.form.email.placeholder">
-                <source>john@example.com</source>
+                <source>max@beispiel.de</source>
             </trans-unit>
             <trans-unit id="contact.form.phone">
-                <source>Phone Number</source>
+                <source>Telefonnummer</source>
             </trans-unit>
             <trans-unit id="contact.form.phone.placeholder">
-                <source>+49 123 456 7890</source>
+                <source>+41 xx xxx xx xx</source>
             </trans-unit>
             <trans-unit id="contact.form.subject">
-                <source>Subject</source>
+                <source>Betreff</source>
             </trans-unit>
             <trans-unit id="contact.form.subject.placeholder">
-                <source>How can we help you?</source>
+                <source>Wie können wir Ihnen helfen?</source>
             </trans-unit>
             <trans-unit id="contact.form.message">
-                <source>Your Message</source>
+                <source>Ihre Nachricht</source>
             </trans-unit>
             <trans-unit id="contact.form.message.placeholder">
-                <source>Tell us about your project or inquiry...</source>
+                <source>Erzählen Sie uns von Ihrem Anliegen …</source>
             </trans-unit>
             <trans-unit id="contact.form.submit">
-                <source>Send Message</source>
+                <source>Nachricht senden</source>
             </trans-unit>
             <trans-unit id="contact.form.privacy">
-                <source>I agree to the privacy policy and consent to my data being processed to handle my inquiry.</source>
-            </trans-unit>
-            <trans-unit id="contact.info.address.label">
-                <source>Address</source>
-            </trans-unit>
-            <trans-unit id="contact.info.address.value">
-                <source>Merkurstraße 1, 10115 Berlin</source>
-            </trans-unit>
-            <trans-unit id="contact.info.phone.label">
-                <source>Phone</source>
-            </trans-unit>
-            <trans-unit id="contact.info.phone.value">
-                <source>+49 30 1234 5678</source>
+                <source>Ich stimme der Datenschutzerklärung zu und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verarbeitet werden.</source>
             </trans-unit>
             <trans-unit id="contact.info.email.label">
-                <source>Email</source>
+                <source>E-Mail</source>
             </trans-unit>
             <trans-unit id="contact.info.email.value">
-                <source>info@merkur.de</source>
+                <source>hallo@mitmerkur.ch</source>
+            </trans-unit>
+            <trans-unit id="contact.info.phone.label">
+                <source>Telefon</source>
+            </trans-unit>
+            <trans-unit id="contact.info.phone.value">
+                <source>+41 xx xxx xx xx</source>
             </trans-unit>
             <trans-unit id="contact.info.hours.label">
-                <source>Business Hours</source>
+                <source>Erreichbarkeit</source>
             </trans-unit>
             <trans-unit id="contact.info.hours.value">
-                <source>Mon – Fri: 9:00 – 18:00</source>
+                <source>Mo – Fr: 9:00 – 18:00 Uhr</source>
             </trans-unit>
 
             <!-- Footer -->
-            <trans-unit id="footer.tagline">
-                <source>Professional solutions for your sustainable success.</source>
-            </trans-unit>
-            <trans-unit id="footer.nav.headline">
-                <source>Navigation</source>
-            </trans-unit>
-            <trans-unit id="footer.services.headline">
-                <source>Services</source>
-            </trans-unit>
             <trans-unit id="footer.contact.headline">
-                <source>Contact</source>
+                <source>Kontakt</source>
             </trans-unit>
             <trans-unit id="footer.copyright">
-                <source>All rights reserved.</source>
+                <source>Alle Rechte vorbehalten.</source>
             </trans-unit>
             <trans-unit id="footer.legal.imprint">
-                <source>Imprint</source>
+                <source>Impressum</source>
             </trans-unit>
             <trans-unit id="footer.legal.privacy">
-                <source>Privacy Policy</source>
+                <source>Datenschutz</source>
             </trans-unit>
         </body>
     </file>

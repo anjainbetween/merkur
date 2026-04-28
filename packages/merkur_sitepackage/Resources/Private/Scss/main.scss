@@ -19,14 +19,12 @@
 
 // 4. Page sections
 @import 'sections/hero';
-@import 'sections/about';
-@import 'sections/services';
+@import 'sections/angebot';
 @import 'sections/contact';
 
 // 5. Scroll-offset for sticky nav
 #hero,
-#about,
-#services,
+#angebot,
 #contact {
     scroll-margin-top: 80px;
 }

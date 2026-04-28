@@ -8,35 +8,17 @@
     left: 0;
     right: 0;
     z-index: $z-sticky;
-    transition: background $transition-base, box-shadow $transition-base, padding $transition-base;
+    background: $color-white;
+    border-bottom: 1px solid $color-border;
+    transition: box-shadow $transition-base;
+
+    &.is-scrolled {
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    }
 }
 
 .navbar {
     padding-block: $spacing-4;
-    transition: padding $transition-base;
-
-    .site-header.is-scrolled & {
-        padding-block: $spacing-3;
-        background: rgba($color-white, 0.97);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-
-        .navbar__link {
-            color: $color-gray-700;
-
-            &:hover {
-                color: $color-primary;
-            }
-        }
-
-        .navbar__logo-mark {
-            background: $color-primary;
-        }
-
-        .navbar__logo-text {
-            color: $color-primary;
-        }
-    }
 }
 
 .navbar__inner {
@@ -44,11 +26,10 @@
     gap: $spacing-8;
 }
 
-// Brand / Logo
+// Wordmark
 .navbar__brand {
     display: flex;
     align-items: center;
-    gap: $spacing-3;
     flex-shrink: 0;
     text-decoration: none;
     @include focus-ring;
@@ -56,26 +37,15 @@
 }
 
 .navbar__logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    background: $color-accent;
-    color: $color-white;
-    border-radius: $radius-md;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-extrabold;
-    letter-spacing: -0.03em;
-    transition: background $transition-base;
+    display: none;
 }
 
 .navbar__logo-text {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-white;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
     letter-spacing: -0.02em;
-    transition: color $transition-base;
+    text-transform: uppercase;
 }
 
 // Menu
@@ -94,7 +64,8 @@
         flex-direction: column;
         align-items: flex-start;
         padding: $spacing-8 $spacing-6;
-        background: $color-primary-dark;
+        background: $color-white;
+        border-top: 1px solid $color-border;
         transform: translateX(100%);
         transition: transform $transition-slow;
         overflow-y: auto;
@@ -108,50 +79,42 @@
 .navbar__item {
     @include respond-below(lg) {
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid $color-gray-200;
     }
 }
 
 .navbar__item--cta {
-    margin-left: $spacing-4;
+    display: none;
 
     @include respond-below(lg) {
-        margin-left: 0;
-        margin-top: $spacing-6;
-        border-bottom: none;
+        display: none;
     }
 }
 
 .navbar__link {
     display: block;
     padding: $spacing-2 $spacing-3;
-    color: rgba(255, 255, 255, 0.85);
+    color: $color-text;
     font-size: $font-size-sm;
-    font-weight: $font-weight-medium;
-    letter-spacing: $letter-spacing-wide;
+    font-weight: $font-weight-semibold;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
     border-radius: $radius-md;
-    transition: color $transition-fast, background $transition-fast;
+    transition: color $transition-fast;
     @include focus-ring;
 
     &:hover {
-        color: $color-white;
-        background: rgba(255, 255, 255, 0.1);
+        color: $color-primary;
     }
 
     @include respond-below(lg) {
         padding: $spacing-4 $spacing-2;
         font-size: $font-size-md;
-        color: $color-white;
-        background: transparent;
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
     }
 }
 
 .navbar__item.is-active .navbar__link {
-    color: $color-accent;
+    color: $color-primary;
 }
 
 // Mobile toggle
@@ -164,7 +127,8 @@
     height: 40px;
     padding: $spacing-2;
     border-radius: $radius-md;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: 1px solid $color-border;
     transition: background $transition-fast;
     @include focus-ring;
 
@@ -173,7 +137,7 @@
     }
 
     &:hover {
-        background: rgba(255, 255, 255, 0.2);
+        background: $color-gray-100;
     }
 
     &[aria-expanded="true"] {
@@ -193,7 +157,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: $color-white;
+    background: $color-primary;
     border-radius: $radius-full;
     transition: transform $transition-base, opacity $transition-base;
     transform-origin: center;

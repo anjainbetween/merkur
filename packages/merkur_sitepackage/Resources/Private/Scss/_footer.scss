@@ -3,13 +3,13 @@
 // =============================================================================
 
 .site-footer {
-    background: #07101b; // 4% darker than $color-primary-dark (#0d1b2a)
-    color: rgba(255, 255, 255, 0.65);
+    background: $color-white;
+    border-top: 1px solid $color-border;
+    color: $color-text;
 }
 
 .footer__main {
     padding-block: $spacing-16 $spacing-12;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .footer__grid {
@@ -19,10 +19,6 @@
 
     @include respond-to(sm) {
         grid-template-columns: 1fr 1fr;
-    }
-
-    @include respond-to(lg) {
-        grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
         gap: $spacing-12;
     }
 }
@@ -36,7 +32,6 @@
 .footer__logo {
     display: inline-flex;
     align-items: center;
-    gap: $spacing-3;
     text-decoration: none;
     @include focus-ring;
     border-radius: $radius-sm;
@@ -44,56 +39,26 @@
 }
 
 .footer__logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: $color-accent;
-    color: $color-white;
-    border-radius: $radius-md;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-extrabold;
-    letter-spacing: -0.03em;
+    display: none;
 }
 
 .footer__logo-text {
     font-size: $font-size-lg;
-    font-weight: $font-weight-bold;
-    color: $color-white;
+    font-weight: $font-weight-extrabold;
+    color: $color-primary;
     letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 
 .footer__tagline {
     font-size: $font-size-sm;
-    color: rgba(255, 255, 255, 0.5);
+    color: $color-text-muted;
     line-height: $line-height-relaxed;
     max-width: 260px;
 }
 
 .footer__social {
-    display: flex;
-    align-items: center;
-    gap: $spacing-3;
-    margin-top: $spacing-2;
-}
-
-.footer__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.07);
-    color: rgba(255, 255, 255, 0.6);
-    border-radius: $radius-md;
-    transition: background $transition-fast, color $transition-fast;
-    @include focus-ring;
-
-    &:hover {
-        background: $color-accent;
-        color: $color-white;
-    }
+    display: none;
 }
 
 // Link columns
@@ -101,11 +66,23 @@
 
 .footer__heading {
     font-size: $font-size-xs;
-    font-weight: $font-weight-semibold;
-    color: $color-white;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
     text-transform: uppercase;
     letter-spacing: $letter-spacing-widest;
-    margin-bottom: $spacing-5;
+    margin-bottom: $spacing-4;
+    margin-top: $spacing-5;
+}
+
+.footer__contact-email {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+    @include focus-ring;
+
+    &:hover {
+        color: $color-primary;
+    }
 }
 
 .footer__links {
@@ -114,12 +91,12 @@
 
     a {
         font-size: $font-size-sm;
-        color: rgba(255, 255, 255, 0.5);
+        color: $color-text-muted;
         transition: color $transition-fast;
         @include focus-ring;
 
         &:hover {
-            color: $color-accent;
+            color: $color-primary;
         }
     }
 }
@@ -131,7 +108,7 @@
 
     p {
         font-size: $font-size-sm;
-        color: rgba(255, 255, 255, 0.5);
+        color: $color-text-muted;
         line-height: $line-height-snug;
     }
 
@@ -139,7 +116,7 @@
         transition: color $transition-fast;
 
         &:hover {
-            color: $color-accent;
+            color: $color-primary;
         }
     }
 }
@@ -147,6 +124,7 @@
 // Footer bottom bar
 .footer__bottom {
     padding-block: $spacing-5;
+    border-top: 1px solid $color-border;
 }
 
 .footer__bottom-inner {
@@ -156,8 +134,7 @@
 }
 
 .footer__copyright {
-    font-size: $font-size-sm;
-    color: rgba(255, 255, 255, 0.35);
+    display: none;
 }
 
 .footer__legal {
@@ -167,12 +144,12 @@
 
     a {
         font-size: $font-size-sm;
-        color: rgba(255, 255, 255, 0.4);
+        color: $color-text-muted;
         transition: color $transition-fast;
         @include focus-ring;
 
         &:hover {
-            color: rgba(255, 255, 255, 0.8);
+            color: $color-primary;
         }
     }
 }

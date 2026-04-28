@@ -1,8 +1,7 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
-    <f:render partial="Sections/Hero" arguments="{data: data}" />
-    <f:render partial="Sections/About" arguments="{data: data}" />
-    <f:render partial="Sections/Services" arguments="{data: data}" />
+    <f:render partial="Sections/Hero" arguments="{data: data, heroImage: heroImage}" />
+    <f:render partial="Sections/Angebot" arguments="{data: data}" />
     <f:render partial="Sections/Contact" arguments="{data: data}" />
 </f:section>

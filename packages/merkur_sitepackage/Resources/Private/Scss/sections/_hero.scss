@@ -5,12 +5,29 @@
 .section--hero {
     position: relative;
     min-height: 100vh;
-    @include flex-center;
+    display: flex;
+    align-items: flex-end;
     padding-block: 0;
     overflow: hidden;
-    color: $color-white;
+    background: $color-white;
+    color: $color-text;
+
+    // Decorative dark circle – top right
+    &::before {
+        content: '';
+        position: absolute;
+        top: -15%;
+        right: -22%;
+        width: min(70vw, 680px);
+        height: min(70vw, 680px);
+        background: $color-primary-dark;
+        border-radius: $radius-full;
+        pointer-events: none;
+        z-index: 0;
+    }
 }
 
+// Optional background image (overrides white bg + circle)
 .hero__background {
     position: absolute;
     inset: 0;
@@ -18,129 +35,109 @@
 }
 
 .hero__gradient {
-    position: absolute;
-    inset: 0;
-    background: $gradient-hero;
-    background-size: 200% 200%;
-    animation: gradientShift 15s ease infinite;
+    display: none;
 }
 
-// Decorative particle dots
-.hero__particles {
+.hero__bg-image {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    &::before,
     &::after {
         content: '';
         position: absolute;
-        border-radius: $radius-full;
-        opacity: 0.07;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+    }
+}
+
+.hero__particles {
+    display: none;
+}
+
+// Show the white/circle design only when no bg image is set
+.section--hero:not(.has-bg-image) .hero__content {
+    color: $color-text;
+
+    .hero__headline {
+        color: $color-primary;
     }
 
-    &::before {
-        width: 500px;
-        height: 500px;
-        background: $color-accent;
-        top: -100px;
-        right: -100px;
-        filter: blur(80px);
+    .hero__subline {
+        color: $color-text-muted;
     }
 
-    &::after {
-        width: 400px;
-        height: 400px;
-        background: $color-primary-light;
-        bottom: -50px;
-        left: -80px;
-        filter: blur(60px);
+    .btn--primary {
+        background: $color-primary;
+        color: $color-white;
+        border-color: $color-primary;
+
+        &:hover {
+            background: $color-primary-light;
+            border-color: $color-primary-light;
+        }
+    }
+}
+
+// When bg image is present, restore white text
+.section--hero.has-bg-image .hero__content {
+    color: $color-white;
+
+    .hero__headline {
+        color: $color-white;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__subline {
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
 .hero__content {
     position: relative;
     z-index: 1;
-    max-width: 840px;
-    text-align: center;
+    max-width: 680px;
     padding-block: $spacing-32 $spacing-20;
-}
 
-.hero__tagline {
-    display: inline-flex;
-    align-items: center;
-    gap: $spacing-2;
-    padding: $spacing-2 $spacing-5;
-    background: rgba($color-accent, 0.15);
-    color: $color-accent;
-    border: 1px solid rgba($color-accent, 0.3);
-    border-radius: $radius-full;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-semibold;
-    letter-spacing: $letter-spacing-widest;
-    text-transform: uppercase;
-    margin-bottom: $spacing-6;
-
-    &::before {
-        content: '';
-        width: 6px;
-        height: 6px;
-        background: $color-accent;
-        border-radius: $radius-full;
+    @include respond-to(md) {
+        padding-block: $spacing-32 $spacing-24;
     }
 }
 
+.hero__tagline {
+    display: none;
+}
+
 .hero__headline {
-    color: $color-white;
+    color: $color-primary;
+    font-size: clamp($font-size-4xl, 8vw, $font-size-6xl);
+    font-weight: $font-weight-extrabold;
     letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: $spacing-6;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: 1.05;
+    margin-bottom: $spacing-5;
 }
 
 .hero__subline {
-    font-size: clamp($font-size-base, 2.5vw, $font-size-lg);
-    color: rgba(255, 255, 255, 0.75);
+    font-size: clamp($font-size-base, 2.5vw, $font-size-md);
+    color: $color-text-muted;
     line-height: $line-height-relaxed;
-    max-width: 640px;
-    margin-inline: auto;
-    margin-bottom: $spacing-10;
+    max-width: 520px;
+    margin-bottom: $spacing-8;
 }
 
 .hero__actions {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: $spacing-4;
 }
 
-// Scroll indicator
 .hero__scroll-indicator {
-    position: absolute;
-    bottom: $spacing-8;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: $radius-full;
-    transition: border-color $transition-base;
-
-    &:hover {
-        border-color: $color-accent;
-    }
+    display: none;
 }
 
 .hero__scroll-dot {
-    display: block;
-    width: 6px;
-    height: 6px;
-    background: $color-white;
-    border-radius: $radius-full;
-    animation: scrollBounce 1.8s ease-in-out infinite;
+    display: none;
 }

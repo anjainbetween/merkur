@@ -4,11 +4,7 @@
     <div class="container">
         <div class="contact__grid">
             <div class="contact__info" data-animate="fade-right">
-                <span class="section__label section__label--light">
-                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.label" />
-                </span>
-
-                <h2 class="section__headline section__headline--light" id="contact-headline">
+                <h2 class="section__headline" id="contact-headline">
                     <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.headline" />
                 </h2>
 
@@ -20,16 +16,16 @@
                     <li class="contact__detail">
                         <span class="contact__detail-icon" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                             </svg>
                         </span>
                         <div>
                             <strong>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.address.label" />
+                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.label" />
                             </strong>
-                            <span>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.address.value" />
-                            </span>
+                            <a href="mailto:info@merkur.de">
+                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.value" />
+                            </a>
                         </div>
                     </li>
                     <li class="contact__detail">
@@ -44,21 +40,6 @@
                             </strong>
                             <a href="tel:+493012345678">
                                 <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.phone.value" />
-                            </a>
-                        </div>
-                    </li>
-                    <li class="contact__detail">
-                        <span class="contact__detail-icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </span>
-                        <div>
-                            <strong>
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.label" />
-                            </strong>
-                            <a href="mailto:info@merkur.de">
-                                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.info.email.value" />
                             </a>
                         </div>
                     </li>
@@ -175,11 +156,8 @@
                         </label>
                     </div>
 
-                    <button class="btn btn--accent btn--lg btn--full" type="submit">
-                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:contact.form.submit" />
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                        </svg>
+                    <button class="btn btn--primary btn--lg btn--full" type="submit">
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.primary" />
                     </button>
                 </form>
             </div>

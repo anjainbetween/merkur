@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TYPO3 CMS Base Distribution
 
 Get going quickly with TYPO3 CMS.
@@ -64,3 +65,6 @@ to be used for development.
 ## License
 
 GPL-2.0 or later
+=======
+# merkur
+>>>>>>> 3fe4d95bd043c17ed25e62a3d7e9b023824b49f7

@@ -5,7 +5,6 @@
         <div class="container">
             <div class="navbar__inner">
                 <a class="navbar__brand" href="/" aria-label="Merkur – Zur Startseite">
-                    <span class="navbar__logo-mark" aria-hidden="true">M</span>
                     <span class="navbar__logo-text">Merkur</span>
                 </a>
 
@@ -23,36 +22,12 @@
 
                 <ul class="navbar__menu" id="main-menu" role="menubar">
                     <li class="navbar__item" role="none">
-                        <a class="navbar__link" href="#hero" role="menuitem">
-                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:nav.home" />
+                        <a class="navbar__link" href="#angebot" role="menuitem">
+                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:nav.angebot" />
                         </a>
                     </li>
                     <li class="navbar__item" role="none">
-                        <a class="navbar__link" href="#about" role="menuitem">
-                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:nav.about" />
-                        </a>
-                    </li>
-                    <li class="navbar__item" role="none">
-                        <a class="navbar__link" href="#services" role="menuitem">
-                            <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:nav.services" />
-                        </a>
-                    </li>
-                    <f:if condition="{mainMenu}">
-                        <f:for each="{mainMenu}" as="menuItem">
-                            <f:if condition="{menuItem.spacer} != 1">
-                                <li class="navbar__item{f:if(condition: menuItem.active, then: ' is-active')}" role="none">
-                                    <a
-                                        class="navbar__link"
-                                        href="{menuItem.link}"
-                                        role="menuitem"
-                                        {f:if(condition: menuItem.current, then: 'aria-current="page"')}
-                                    >{menuItem.title}</a>
-                                </li>
-                            </f:if>
-                        </f:for>
-                    </f:if>
-                    <li class="navbar__item navbar__item--cta" role="none">
-                        <a class="btn btn--primary btn--sm" href="#contact" role="menuitem">
+                        <a class="navbar__link" href="#contact" role="menuitem">
                             <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:nav.contact" />
                         </a>
                     </li>

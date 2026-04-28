@@ -1,40 +1,69 @@
-<f:comment><!-- Hero Section --></f:comment>
+<f:comment><!-- Hero Section – fields sourced from page properties (TCA) with XLF fallbacks --></f:comment>
 
-<section class="section section--hero" id="hero" aria-labelledby="hero-headline">
-    <div class="hero__background" aria-hidden="true">
-        <div class="hero__gradient"></div>
-        <div class="hero__particles"></div>
-    </div>
+<f:variable name="hasBgImage" value="{heroImage.0}" />
+<section
+    class="section section--hero{f:if(condition: heroImage.0, then: ' has-bg-image')}"
+    id="hero"
+    aria-labelledby="hero-headline"
+>
+    <f:if condition="{heroImage.0}">
+        <div class="hero__background" aria-hidden="true">
+            <div
+                class="hero__bg-image"
+                style="background-image: url('{heroImage.0.publicUrl}')"
+                role="img"
+                aria-label="{heroImage.0.properties.alternative}"
+            ></div>
+        </div>
+    </f:if>
 
     <div class="container">
         <div class="hero__content">
-            <span class="hero__tagline animate-fade-up">
-                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.tagline" />
-            </span>
-
-            <h1 class="hero__headline animate-fade-up" id="hero-headline" style="animation-delay: 0.1s">
-                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.headline" />
+            <h1 class="hero__headline animate-fade-up" id="hero-headline">
+                <f:if condition="{data.tx_merkursitepackage_hero_headline}">
+                    <f:then>{data.tx_merkursitepackage_hero_headline}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.headline" />
+                    </f:else>
+                </f:if>
             </h1>
 
-            <p class="hero__subline animate-fade-up" style="animation-delay: 0.2s">
-                <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.subline" />
+            <p class="hero__subline animate-fade-up" style="animation-delay: 0.1s">
+                <f:if condition="{data.tx_merkursitepackage_hero_subheadline}">
+                    <f:then>{data.tx_merkursitepackage_hero_subheadline}</f:then>
+                    <f:else>
+                        <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.subline" />
+                    </f:else>
+                </f:if>
             </p>
 
-            <div class="hero__actions animate-fade-up" style="animation-delay: 0.3s">
-                <a class="btn btn--primary btn--lg" href="#services">
-                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.primary" />
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a class="btn btn--outline btn--lg" href="#contact">
-                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.secondary" />
-                </a>
+            <div class="hero__actions animate-fade-up" style="animation-delay: 0.2s">
+                <f:if condition="{data.tx_merkursitepackage_hero_button_link}">
+                    <f:then>
+                        <f:link.typolink
+                            parameter="{data.tx_merkursitepackage_hero_button_link}"
+                            class="btn btn--primary btn--lg"
+                        >
+                            <f:if condition="{data.tx_merkursitepackage_hero_button_text}">
+                                <f:then>{data.tx_merkursitepackage_hero_button_text}</f:then>
+                                <f:else>
+                                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.primary" />
+                                </f:else>
+                            </f:if>
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+                        <a class="btn btn--primary btn--lg" href="#contact">
+                            <f:if condition="{data.tx_merkursitepackage_hero_button_text}">
+                                <f:then>{data.tx_merkursitepackage_hero_button_text}</f:then>
+                                <f:else>
+                                    <f:translate key="LLL:EXT:merkur_sitepackage/Resources/Private/Language/locallang.xlf:hero.cta.primary" />
+                                </f:else>
+                            </f:if>
+                        </a>
+                    </f:else>
+                </f:if>
             </div>
         </div>
     </div>
-
-    <a class="hero__scroll-indicator" href="#about" aria-label="Nach unten scrollen">
-        <span class="hero__scroll-dot"></span>
-    </a>
 </section>

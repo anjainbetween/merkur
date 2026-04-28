@@ -62,6 +62,12 @@ page {
                 includeSpacer = 1
                 titleField = nav_title // title
             }
+
+            20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            20 {
+                references.fieldName = tx_merkursitepackage_hero_bg_image
+                as = heroImage
+            }
         }
     }
 
