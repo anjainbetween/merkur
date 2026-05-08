@@ -39,7 +39,7 @@
     align-items: flex-end;
     flex-shrink: 0;
     text-decoration: none;
-    @include focus-ring($color-black);
+    @include focus-ring($color-navy);
 }
 
 .navbar__logo-mark {
@@ -50,7 +50,7 @@
     font-size: $fs-big-heading;
     font-weight: $fw-big-heading;
     line-height: 1;
-    color: $color-black;
+    color: $color-navy;
     text-transform: uppercase;
     letter-spacing: 0;
 }
@@ -94,7 +94,7 @@
 .navbar__link {
     display: block;
     padding: 5px;
-    color: $color-black;
+    color: $color-navy;
     font-size: $fs-primary-label;
     font-weight: $fw-primary-label;
     line-height: $lh-primary-label;
@@ -102,7 +102,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: opacity $transition-fast;
-    @include focus-ring($color-black);
+    @include focus-ring($color-navy);
 
     &:hover {
         opacity: 0.65;
@@ -127,7 +127,7 @@
     border: 1px solid $color-border;
     border-radius: $radius-sm;
     transition: background $transition-fast;
-    @include focus-ring($color-black);
+    @include focus-ring($color-navy);
 
     @include respond-below(lg) {
         display: flex;
@@ -148,7 +148,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: $color-black;
+    background: $color-navy;
     transition: transform $transition-base, opacity $transition-base;
     transform-origin: center;
 }

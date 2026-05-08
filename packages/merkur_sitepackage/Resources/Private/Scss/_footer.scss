@@ -3,9 +3,9 @@
 // =============================================================================
 
 .site-footer {
-    background: $color-white;
-    border-top: 1px solid $color-border;
-    color: $color-text;
+    background: linear-gradient(to bottom, $color-navy-medium, $color-navy-dark);
+    border-top: 1px solid rgba($color-white, 0.15);
+    color: $color-white;
 }
 
 .footer__main {
@@ -37,7 +37,7 @@
     align-items: center;
     text-decoration: none;
     width: fit-content;
-    @include focus-ring($color-black);
+    @include focus-ring($color-white);
 }
 
 .footer__logo-mark {
@@ -48,7 +48,7 @@
     font-size: $fs-big-heading;
     font-weight: $fw-big-heading;
     line-height: 1;
-    color: $color-black;
+    color: $color-white;
     text-transform: uppercase;
     letter-spacing: 0;
 }
@@ -58,7 +58,7 @@
     font-weight: $fw-lead;
     line-height: $lh-lead;
     letter-spacing: $ls-lead;
-    color: $color-text-muted;
+    color: $color-white;
 }
 
 .footer__social {
@@ -78,7 +78,7 @@
     font-weight: $fw-primary-label;
     line-height: $lh-primary-label;
     letter-spacing: $ls-primary-label;
-    color: $color-text-darkest;
+    color: $color-white;
     text-transform: uppercase;
 }
 
@@ -87,10 +87,10 @@
     font-weight: $fw-text;
     line-height: $lh-text;
     letter-spacing: $ls-text;
-    color: $color-black;
+    color: $color-white;
     text-decoration: none;
     transition: opacity $transition-fast;
-    @include focus-ring($color-black);
+    @include focus-ring($color-white);
 
     &:hover {
         opacity: 0.65;
@@ -107,10 +107,10 @@
         font-weight: $fw-tertiary;
         line-height: $lh-tertiary;
         letter-spacing: $ls-tertiary;
-        color: $color-text-card;
+        color: $color-white;
         text-decoration: none;
         transition: opacity $transition-fast;
-        @include focus-ring($color-black);
+        @include focus-ring($color-white);
 
         &:hover {
             opacity: 0.65;
@@ -128,7 +128,7 @@
         font-weight: $fw-text;
         line-height: $lh-text;
         letter-spacing: $ls-text;
-        color: $color-text-muted;
+        color: $color-white;
     }
 
     a {
@@ -169,10 +169,10 @@
         font-weight: $fw-text;
         line-height: $lh-text;
         letter-spacing: $ls-text;
-        color: $color-text-muted;
+        color: $color-white;
         text-decoration: none;
         transition: opacity $transition-fast;
-        @include focus-ring($color-black);
+        @include focus-ring($color-white);
 
         &:hover {
             opacity: 0.65;
