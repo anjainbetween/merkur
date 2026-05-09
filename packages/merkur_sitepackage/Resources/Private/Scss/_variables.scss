@@ -4,14 +4,14 @@
 
 // ── Colors ────────────────────────────────────────────────────────────────────
 $color-black:           #000000;   // Logo, nav text
-$color-navy:            #11115e;   // Primary brand color
+$color-navy:            #10107a;   // Primary brand color
 $color-navy-medium:     #3b3b72;   // Gradient start / hero subline
 $color-navy-dark:       #141492;   // Gradient end
-$color-btn:             #11115e;   // Button bg, hero circle
-$color-heading:         #11115e;   // Hero headline
-$color-text-darkest:    #11115e;   // Kontakt headline, footer headings, footer tagline
+$color-btn:             $color-navy;   // Button bg
+$color-heading:         $color-navy;   // Hero headline
+$color-text-darkest:    $color-navy;   // Kontakt headline, footer headings, footer tagline
 $color-text-dark:       #262626;   // Kontakt body text
-$color-text-card:       #11115e;   // Card titles, footer Angebot links
+$color-text-card:       $color-navy;   // Card titles, footer Angebot links
 $color-text-muted:      #525252;   // Card descriptions (light bg only)
 $color-white:           #ffffff;
 $color-border:          #e5e5e5;   // Section borders, column dividers

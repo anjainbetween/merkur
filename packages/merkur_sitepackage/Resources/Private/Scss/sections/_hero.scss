@@ -10,44 +10,116 @@
     padding-block: 0;
     overflow: hidden;
     background: $color-white;
-
-    // Decorative dark circle – Figma exact proportions
-    &::before {
-        content: '';
-        position: absolute;
-        width: 74.47%;
-        aspect-ratio: 1 / 1;
-        left: 53.18%;
-        top: -57.1%;
-        background: $color-btn;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 0;
-    }
 }
 
-// Hide circle when a background image is set
-.section--hero.has-bg-image::before {
-    display: none;
-}
+// ── Planet animation ───────────────────────────────────────────────────────────
 
-// Optional background image
-.hero__background {
+.hero__planet {
     position: absolute;
-    inset: 0;
+    right: 0;
+    top: 0;
+    width: clamp(480px, 62vw, 780px);
+    aspect-ratio: 1;
+    transform: translate(18%, -22%);
     z-index: 0;
+    pointer-events: none;
+    animation: planet-drift 26s ease-in-out infinite;
 }
 
-.hero__bg-image {
+@keyframes planet-drift {
+    0%, 100% { transform: translate(18%, -22%); }
+    50%       { transform: translate(18%, -20%); }
+}
+
+.hero__planet-sphere {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 50%, #1a1a70 0%, #09092e 70%, #040418 100%);
 }
 
-// Hero content – pinned to bottom with section padding
+// Soft blobs – each drifts independently to create the oil/petrol effect
+.hero__planet-blob {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    filter: blur(48px);
+}
+
+.hero__planet-blob--1 {
+    width: 65%; height: 65%;
+    top: 5%; left: 10%;
+    background: radial-gradient(circle, rgba(0, 210, 220, 0.5) 0%, transparent 70%);
+    animation: blob1 10s ease-in-out infinite alternate;
+}
+.hero__planet-blob--2 {
+    width: 55%; height: 55%;
+    top: 35%; left: 40%;
+    background: radial-gradient(circle, rgba(110, 40, 240, 0.45) 0%, transparent 70%);
+    animation: blob2 13s ease-in-out infinite alternate;
+}
+.hero__planet-blob--3 {
+    width: 50%; height: 50%;
+    top: 55%; left: 0%;
+    background: radial-gradient(circle, rgba(0, 130, 255, 0.4) 0%, transparent 70%);
+    animation: blob3 9s ease-in-out infinite alternate;
+}
+.hero__planet-blob--4 {
+    width: 45%; height: 45%;
+    top: 10%; left: 55%;
+    background: radial-gradient(circle, rgba(0, 230, 190, 0.35) 0%, transparent 70%);
+    animation: blob4 11s ease-in-out infinite alternate;
+}
+.hero__planet-blob--5 {
+    width: 40%; height: 40%;
+    top: 60%; left: 50%;
+    background: radial-gradient(circle, rgba(160, 60, 220, 0.35) 0%, transparent 70%);
+    animation: blob5 15s ease-in-out infinite alternate;
+}
+
+@keyframes blob1 {
+    from { transform: translate(0%,   0%)   scale(1);    }
+    to   { transform: translate(22%,  28%)  scale(1.15); }
+}
+@keyframes blob2 {
+    from { transform: translate(0%,   0%)   scale(1.1);  }
+    to   { transform: translate(-28%, -22%) scale(0.9);  }
+}
+@keyframes blob3 {
+    from { transform: translate(0%,   0%)   scale(1);    }
+    to   { transform: translate(30%,  -30%) scale(1.2);  }
+}
+@keyframes blob4 {
+    from { transform: translate(0%,   0%)   scale(0.95); }
+    to   { transform: translate(-22%, 32%)  scale(1.1);  }
+}
+@keyframes blob5 {
+    from { transform: translate(0%,   0%)   scale(1);    }
+    to   { transform: translate(-18%, -28%) scale(1.15); }
+}
+
+// Stars
+.hero__planet-stars {
+    position: absolute;
+    inset: -55%;
+    pointer-events: none;
+}
+
+.hero__star {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(170, 170, 230, 0.85);
+    animation: star-twinkle ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.08; transform: scale(0.7); }
+    50%       { opacity: 1;    transform: scale(1);   }
+}
+
+// ── Hero content ──────────────────────────────────────────────────────────────
+
 .hero__content {
     position: relative;
     z-index: 1;

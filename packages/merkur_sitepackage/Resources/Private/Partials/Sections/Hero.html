@@ -1,21 +1,17 @@
 <f:comment><!-- Hero Section – fields sourced from page properties (TCA) with XLF fallbacks --></f:comment>
 
-<f:variable name="hasBgImage" value="{heroImage.0}" />
-<section
-    class="section section--hero{f:if(condition: heroImage.0, then: ' has-bg-image')}"
-    id="hero"
-    aria-labelledby="hero-headline"
->
-    <f:if condition="{heroImage.0}">
-        <div class="hero__background" aria-hidden="true">
-            <div
-                class="hero__bg-image"
-                style="background-image: url('{heroImage.0.publicUrl}')"
-                role="img"
-                aria-label="{heroImage.0.properties.alternative}"
-            ></div>
+<section class="section section--hero" id="hero" aria-labelledby="hero-headline">
+
+    <div class="hero__planet" aria-hidden="true">
+        <div class="hero__planet-sphere">
+            <div class="hero__planet-blob hero__planet-blob--1"></div>
+            <div class="hero__planet-blob hero__planet-blob--2"></div>
+            <div class="hero__planet-blob hero__planet-blob--3"></div>
+            <div class="hero__planet-blob hero__planet-blob--4"></div>
+            <div class="hero__planet-blob hero__planet-blob--5"></div>
         </div>
-    </f:if>
+        <div class="hero__planet-stars" id="planet-stars"></div>
+    </div>
 
     <div class="container">
         <div class="hero__content">

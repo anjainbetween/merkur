@@ -184,6 +184,30 @@
     }
 
     // -------------------------------------------------------------------------
+    // Hero planet – generate twinkling stars
+    // -------------------------------------------------------------------------
+    var planetStars = document.getElementById('planet-stars');
+    if (planetStars) {
+        var frag = document.createDocumentFragment();
+        for (var si = 0; si < 60; si++) {
+            var star = document.createElement('span');
+            star.className = 'hero__star';
+            var size     = Math.random() * 2.2 + 0.5;
+            var delay    = (Math.random() * 7).toFixed(2);
+            var duration = (Math.random() * 4 + 3).toFixed(2);
+            star.style.cssText =
+                'left:'              + (Math.random() * 110 - 5)  + '%;' +
+                'top:'               + (Math.random() * 110 - 5)  + '%;' +
+                'width:'             + size     + 'px;'                   +
+                'height:'            + size     + 'px;'                   +
+                'animation-delay:'   + delay    + 's;'                    +
+                'animation-duration:'+ duration + 's;';
+            frag.appendChild(star);
+        }
+        planetStars.appendChild(frag);
+    }
+
+    // -------------------------------------------------------------------------
     // Add .js class to <html> to enable JS-enhanced styles
     // -------------------------------------------------------------------------
     document.documentElement.classList.remove('no-js');
